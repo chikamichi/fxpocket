@@ -98,5 +98,12 @@ describe('<Currency />', () => {
       // @see https://reactjs.org/docs/forms.html#the-select-tag
       expect(wrapper.find('.fxp-currency__list').is('[value="EUR"]')).toBe(true)
     })
+
+    it('displays a text input to enter an amount, with an explicit unit', () => {
+      const resultArea = wrapper.find('.fxp-currency__result')
+      expect(resultArea.children().length).toEqual(2)
+      expect(resultArea.childAt(0).equals(<input type='text' className='fxp-currency__amount' />)).toBe(true)
+      expect(resultArea.childAt(1).equals(<span className='fxp-currency__label'>EUR</span>)).toBe(true)
+    })
   })
 })
