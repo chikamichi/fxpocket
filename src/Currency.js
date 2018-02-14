@@ -14,7 +14,10 @@ class Currency extends React.Component {
           <option value='EUR'>EUR</option>
           <option value='USD'>USD</option>
         </select>
-        <div className='fxp-currency__result'></div>
+        <div className='fxp-currency__result'>
+          <input type='text' className='fxp-currency__amount' />
+          <span className='fxp-currency__label'>{this.state.currency}</span>
+        </div>
       </div>
     )
   }
