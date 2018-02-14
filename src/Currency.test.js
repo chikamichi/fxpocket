@@ -85,6 +85,10 @@ describe('<Currency />', () => {
       expect(wrapper.is('div.fxp-currency')).toBe(true)
     })
 
+    it('renders as a div.fxp-currency--{type}', () => {
+      expect(wrapper.is('div.fxp-currency--quote')).toBe(true)
+    })
+
     it('first renders a currency drop-down', () => {
       expect(wrapper.childAt(0).is('select.fxp-currency__list')).toBe(true)
     })
