@@ -76,9 +76,22 @@ describe('<Currency />', () => {
   })
 
   describe('layout', () => {
-    it('has a root of div.fxp-currency', () => {
-      const wrapper = shallow(<Currency type='quote' currency='EUR' />)
-      expect(wrapper.html()).toEqual('<div class="fxp-currency"></div>')
+    var wrapper = undefined
+
+    beforeEach(() => {
+      wrapper = shallow(<Currency type='quote' currency='EUR' />)
+    })
+
+    it('renders as a div.fxp-currency', () => {
+      expect(wrapper.is('div.fxp-currency')).toBe(true)
+    })
+
+    it('first renders a currency drop-down', () => {
+      expect(wrapper.childAt(0).is('select.fxp-currency__list')).toBe(true)
+    })
+
+    it('then renders a result area', () => {
+      expect(wrapper.childAt(1).is('div.fxp-currency__result')).toBe(true)
     })
   })
 })
