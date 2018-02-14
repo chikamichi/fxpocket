@@ -74,4 +74,11 @@ describe('<Currency />', () => {
       expect(wrapper.instance().props.currency).toEqual('EUR')
     })
   })
+
+  describe('layout', () => {
+    it('has a root of div.fxp-currency', () => {
+      const wrapper = shallow(<Currency type='quote' currency='EUR' />)
+      expect(wrapper.html()).toEqual('<div class="fxp-currency"></div>')
+    })
+  })
 })
