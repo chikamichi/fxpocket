@@ -7,8 +7,8 @@ class App extends Component {
   render() {
     return (
       <div className="fxp">
-        <Currency />
-        <Currency />
+        <Currency type='quote' currency='EUR' />
+        <Currency type='counter' currency='USD' />
       </div>
     )
   }
