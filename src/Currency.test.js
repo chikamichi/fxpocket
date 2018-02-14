@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import { assertPropTypes } from 'check-prop-types'
 
 import Currency from './Currency'
@@ -124,6 +124,24 @@ describe('<Currency />', () => {
       setImmediate(() => {
         const expected = ['EUR', ...Object.keys(response.rates)]
         expect(wrapper).toHaveState('currencies', expected)
+        done()
+      }, 0)
+    })
+
+    it('renders as a full-fledged list', done => {
+      const wrapper = mount(<Currency type='quote' currency='EUR' />)
+      const expected = ['EUR', ...Object.keys(response.rates)]
+      setImmediate(() => {
+        const items = wrapper.update().find('.fxp-currency__list-item')
+        items.forEach((option, _) => {
+          expect(option.is('option')).toBe(true)
+        })
+        const itemsAsValues = items.map((option, _) => option.prop('value'))
+        expect(itemsAsValues).toEqual(expected)
+        const itemsAsKeys = items.map((option, _) => option.key())
+        expect(itemsAsKeys).toEqual(expected)
+        const itemsAsText = items.map((option, _) => option.text())
+        expect(itemsAsText).toEqual(expected)
         done()
       }, 0)
     })

@@ -19,11 +19,13 @@ class Currency extends React.Component {
   }
 
   render() {
+    const currencies = this.state.currencies.map((currency) =>
+      <option className='fxp-currency__list-item' value={currency} key={currency}>{currency}</option>
+    )
     return (
       <div className={`fxp-currency  fxp-currency--${this.state.type}`}>
         <select value={this.state.currency} className='fxp-currency__list'>
-          <option value='EUR'>EUR</option>
-          <option value='USD'>USD</option>
+          {currencies}
         </select>
         <div className='fxp-currency__result'>
           <input type='text' className='fxp-currency__amount' />
