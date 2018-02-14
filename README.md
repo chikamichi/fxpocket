@@ -28,6 +28,7 @@ Then go check http://localhost:3000/.
 ## A Student's Noteworthy Features
 
 * [Pull Request #2](https://github.com/chikamichi/fxpocket/pull/2) demonstrates *Test-Driven Development* (TDD) in a step-by-step fashion.
+* [Pull Request #9](https://github.com/chikamichi/fxpocket/pull/9) demonstrates a simple API-aware component's lifecycle, with underlying limitations.
 
 ## Quality of Life
 
