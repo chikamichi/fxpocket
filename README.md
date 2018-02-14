@@ -20,12 +20,16 @@ npm start
 
 Then go check http://localhost:3000/.
 
-## Specs & tests
+## Specs & Tests
 
 * High-level specs are available in [docs/features](./docs/features).
 * Unit and functional tests may be run with `npm run test`.
 
-## Quality of life
+## A Student's Noteworthy Features
+
+* [Pull Request #2](https://github.com/chikamichi/fxpocket/pull/2) demonstrates *Test-Driven Development* (TDD) in a step-by-step fashion.
+
+## Quality of Life
 
 This project was bootstrapped with [*Create React App*](https://github.com/facebookincubator/create-react-app) the following way:
 
