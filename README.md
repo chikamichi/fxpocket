@@ -1,7 +1,9 @@
 fxPocket
 ========
 
-**A simple currency converter**
+**A simple currency converter.**
+
+## TL;DR:
 
 Install required dependencies with:
 
@@ -17,6 +19,11 @@ npm start
 ```
 
 Then go check http://localhost:3000/.
+
+## Specs & tests
+
+* High-level specs are available in [docs/features](./docs/features).
+* Unit and functional tests may be run with `npm run test`.
 
 ## Quality of life
 
