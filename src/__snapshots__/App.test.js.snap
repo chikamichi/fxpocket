@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<div
+  className="fxp"
+>
+  <Currency
+    currency="EUR"
+    type="quote"
+  />
+  <Currency
+    currency="USD"
+    type="counter"
+  />
+</div>
+`;
