@@ -28,16 +28,23 @@ describe('<Currency />', () => {
     // that issue, until React provides a native way to toggle error throwing in
     // tests.
 
+    const dummyProps = {
+      type: '',
+      currency: ''
+    }
+
     it('requires a "type" string prop', () => {
+      const {type, ...props} = dummyProps
       expect(() => {
-          assertPropTypes(Currency.propTypes, {}, 'prop', Currency.type)
+          assertPropTypes(Currency.propTypes, props, 'prop', Currency.type)
         }
       ).toThrowError(/prop `type` is marked as required/)
     })
 
     it('requires a "currency" string prop', () => {
+      const {currency, ...props} = dummyProps
       expect(() => {
-          assertPropTypes(Currency.propTypes, {}, 'prop', Currency.currency)
+          assertPropTypes(Currency.propTypes, props, 'prop', Currency.currency)
         }
       ).toThrowError(/prop `currency` is marked as required/)
     })
