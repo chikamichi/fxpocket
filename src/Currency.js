@@ -9,7 +9,7 @@ class Currency extends React.Component {
 
   render() {
     return (
-      <div className='fxp-currency'>
+      <div className={`fxp-currency  fxp-currency--${this.state.type}`}>
         <select value={this.state.currency} className='fxp-currency__list'>
           <option value='EUR'>EUR</option>
           <option value='USD'>USD</option>
