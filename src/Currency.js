@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 class Currency extends React.Component {
   render() {
     return (
-      <div></div>
+      <div className='fxp-currency'></div>
     )
   }
 }
