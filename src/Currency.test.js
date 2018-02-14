@@ -62,7 +62,6 @@ describe('<Currency />', () => {
     it('rejects invalid "type" prop values', () => {
       const props = dummyProps
       props.type = 'foobar'
-      console.log(props)
       expect(() => {
           assertPropTypes(Currency.propTypes, props, 'prop', Currency.type)
         }
@@ -92,6 +91,12 @@ describe('<Currency />', () => {
 
     it('then renders a result area', () => {
       expect(wrapper.childAt(1).is('div.fxp-currency__result')).toBe(true)
+    })
+
+    it('pre-selects the specified currency', () => {
+      // Testing against React's "selected" API.
+      // @see https://reactjs.org/docs/forms.html#the-select-tag
+      expect(wrapper.find('.fxp-currency__list').is('[value="EUR"]')).toBe(true)
     })
   })
 })
