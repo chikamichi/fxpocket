@@ -2,10 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 class Currency extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { ...props }
+  }
+
   render() {
     return (
       <div className='fxp-currency'>
-        <select className='fxp-currency__list'></select>
+        <select value={this.state.currency} className='fxp-currency__list'>
+          <option value='EUR'>EUR</option>
+          <option value='USD'>USD</option>
+        </select>
         <div className='fxp-currency__result'></div>
       </div>
     )
