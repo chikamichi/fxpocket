@@ -4,7 +4,10 @@ import PropTypes from 'prop-types'
 class Currency extends React.Component {
   render() {
     return (
-      <div className='fxp-currency'></div>
+      <div className='fxp-currency'>
+        <select className='fxp-currency__list'></select>
+        <div className='fxp-currency__result'></div>
+      </div>
     )
   }
 }
