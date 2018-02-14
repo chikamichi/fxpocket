@@ -29,7 +29,7 @@ describe('<Currency />', () => {
     // tests.
 
     const dummyProps = {
-      type: '',
+      type: 'quote',
       currency: ''
     }
 
