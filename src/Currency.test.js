@@ -1,5 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+import { assertPropTypes } from 'check-prop-types'
 
 import Currency from './Currency'
 
@@ -10,7 +11,7 @@ describe('<Currency />', () => {
   })
 
   describe('props', () => {
-    // A Tale of Two Pitfalls:
+    // A Tale of Three Pitfalls:
     //
     // https://github.com/airbnb/enzyme/pull/1243
     // Testing props requires components to be stateful, starting with React 16.
@@ -20,6 +21,26 @@ describe('<Currency />', () => {
     // is, testing all valid values, which leaves room for error due to new
     // valid values being added to the code but not in the test. Test must be
     // maintained as well!
+    //
+    // https://github.com/facebook/prop-types/issues/28
+    // When a required prop-type is not provided, React console.log() which is
+    // hard to test against. Using the check-prop-types library will work around
+    // that issue, until React provides a native way to toggle error throwing in
+    // tests.
+
+    it('requires a "type" string prop', () => {
+      expect(() => {
+          assertPropTypes(Currency.propTypes, {}, 'prop', Currency.type)
+        }
+      ).toThrowError(/prop `type` is marked as required/)
+    })
+
+    it('requires a "currency" string prop', () => {
+      expect(() => {
+          assertPropTypes(Currency.propTypes, {}, 'prop', Currency.currency)
+        }
+      ).toThrowError(/prop `currency` is marked as required/)
+    })
 
     it('allows for a "type" string prop with value "quote"', () => {
       const wrapper = shallow(<Currency type='quote' />)
