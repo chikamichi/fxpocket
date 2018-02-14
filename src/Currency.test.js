@@ -1,13 +1,20 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import { assertPropTypes } from 'check-prop-types'
 
 import Currency from './Currency'
 
 describe('<Currency />', () => {
-  it('renders a currency element', () => {
-    const wrapper = shallow(<Currency />)
-    expect(wrapper).toBePresent()
+  var response
+
+  beforeEach(() => {
+    response = {
+      rates: {
+        FOO: 'BAR',
+        PI: 3.14
+      }
+    }
+    fetch.mockResponse(JSON.stringify(response))
   })
 
   describe('props', () => {
@@ -108,6 +115,35 @@ describe('<Currency />', () => {
       expect(resultArea.children().length).toEqual(2)
       expect(resultArea.childAt(0).equals(<input type='text' className='fxp-currency__amount' />)).toBe(true)
       expect(resultArea.childAt(1).equals(<span className='fxp-currency__label'>EUR</span>)).toBe(true)
+    })
+  })
+
+  describe('currencies list', () => {
+    it('is populated before the component renders', done => {
+      const wrapper = shallow(<Currency type='quote' currency='EUR' />)
+      setImmediate(() => {
+        const expected = ['EUR', ...Object.keys(response.rates)]
+        expect(wrapper).toHaveState('currencies', expected)
+        done()
+      }, 0)
+    })
+
+    it('renders as a full-fledged list', done => {
+      const wrapper = mount(<Currency type='quote' currency='EUR' />)
+      const expected = ['EUR', ...Object.keys(response.rates)]
+      setImmediate(() => {
+        const items = wrapper.update().find('.fxp-currency__list-item')
+        items.forEach((option, _) => {
+          expect(option.is('option')).toBe(true)
+        })
+        const itemsAsValues = items.map((option, _) => option.prop('value'))
+        expect(itemsAsValues).toEqual(expected)
+        const itemsAsKeys = items.map((option, _) => option.key())
+        expect(itemsAsKeys).toEqual(expected)
+        const itemsAsText = items.map((option, _) => option.text())
+        expect(itemsAsText).toEqual(expected)
+        done()
+      }, 0)
     })
   })
 })
