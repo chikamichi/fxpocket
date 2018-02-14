@@ -59,6 +59,16 @@ describe('<Currency />', () => {
       expect(wrapper.instance().props.type).toEqual('counter')
     })
 
+    it('rejects invalid "type" prop values', () => {
+      const props = dummyProps
+      props.type = 'foobar'
+      console.log(props)
+      expect(() => {
+          assertPropTypes(Currency.propTypes, props, 'prop', Currency.type)
+        }
+      ).toThrowError(/expected one of \["quote","counter"\]/)
+    })
+
     it('allows for a "currency" string prop', () => {
       const wrapper = shallow(<Currency currency='EUR' />)
       expect(wrapper.instance().props.currency).toEqual('EUR')
