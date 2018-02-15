@@ -21,6 +21,18 @@ class App extends Component {
     this.setState({base: payload})
   }
 
+  convertAmounts() {
+    const base = this.state.base
+    if (!base.amount || !base.currency) return {}
+    return this.currenciesList().reduce((acc, currency) => {
+      if (base.currency === currency)
+        acc[currency] = base.amount
+      else
+        acc[currency] = base.amount * this.state.currencies[base.currency][currency]
+      return acc
+    }, {})
+  }
+
   currenciesList() {
     const currencies = Object.keys(this.state.currencies)
     return currencies.sort((a, b) => a.localeCompare(b))

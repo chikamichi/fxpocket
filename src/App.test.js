@@ -52,6 +52,34 @@ describe('<App />', () => {
     })
   })
 
+  describe('Currency#convertAmounts()', () => {
+    var wrapper
+
+    beforeEach(() => {
+      wrapper = shallow(<App />)
+    })
+
+    it('returns a null object when state.base is not set', () => {
+      expect(wrapper.instance().convertAmounts()).toEqual({})
+    })
+
+    it('computes each widget\'s amount based on state.base insights', done => {
+      setImmediate(() => {
+        wrapper.setState({base: {amount: 2, currency: 'EUR'}})
+        expect(wrapper.instance().convertAmounts()).toEqual({
+          EUR: 2, // 2*1
+          USD: 2.5 // 2*1.25
+        })
+        wrapper.setState({base: {amount: 5, currency: 'USD'}})
+        expect(wrapper.instance().convertAmounts()).toEqual({
+          EUR: 4, // 5*0.8
+          USD: 5 // 5*1
+        })
+        done()
+      }, 0)
+    })
+  })
+
   describe('state', () => {
     var wrapper
 
