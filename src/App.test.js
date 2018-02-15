@@ -53,20 +53,42 @@ describe('<App />', () => {
   })
 
   describe('state', () => {
+    var wrapper
+
+    beforeEach(() => {
+      wrapper = shallow(<App />)
+    })
+
     describe('.currencies', () => {
       it('is initially an empty object', () => {
-        const wrapper = shallow(<App />)
         expect(wrapper).toHaveState('currencies', {})
       })
 
       it('is stored as a [{currency => rates}+] object', done => {
-        const wrapper = shallow(<App />)
         const expected = Object.keys(response.fixer.latest).reduce((acc, currency) => {
           acc[currency] = response.fixer.latest[currency].rates
           return acc
         }, {})
         setImmediate(() => {
           expect(wrapper).toHaveState('currencies', expected)
+          done()
+        }, 0)
+      })
+    })
+
+    describe('.base', () => {
+      const initialState = {
+        amount: undefined,
+        currency: undefined
+      }
+
+      it('is initially empty', () => {
+        expect(wrapper).toHaveState('base', initialState)
+      })
+
+      it('remains empty in the absence of a user\'s triggered update', done => {
+        setImmediate(() => {
+          expect(wrapper).toHaveState('base', initialState)
           done()
         }, 0)
       })

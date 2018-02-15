@@ -9,7 +9,11 @@ class App extends Component {
     super(props)
     this.state = {
       currencies: {},
-      widgets: ['EUR', 'USD']
+      widgets: ['EUR', 'USD'],
+      base: {
+        amount: undefined,
+        currency: undefined
+      }
     }
   }
 
