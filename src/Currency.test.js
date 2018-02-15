@@ -5,17 +5,11 @@ import { assertPropTypes } from 'check-prop-types'
 import Currency from './Currency'
 
 describe('<Currency />', () => {
-  var response
-
-  beforeEach(() => {
-    response = {
-      rates: {
-        FOO: 'BAR',
-        PI: 3.14
-      }
-    }
-    fetch.mockResponse(JSON.stringify(response))
-  })
+  const dummyProps = {
+    type: 'quote',
+    currency: 'EUR',
+    currencies: ['EUR', 'USD']
+  }
 
   describe('props', () => {
     // A Tale of Three Pitfalls:
@@ -35,11 +29,6 @@ describe('<Currency />', () => {
     // that issue, until React provides a native way to toggle error throwing in
     // tests.
 
-    const dummyProps = {
-      type: 'quote',
-      currency: ''
-    }
-
     it('requires a "type" string prop', () => {
       const {type, ...props} = dummyProps
       expect(() => {
@@ -56,28 +45,32 @@ describe('<Currency />', () => {
       ).toThrowError(/prop `currency` is marked as required/)
     })
 
+    it('requires a "currencies" array prop', () => {
+      const {currencies, ...props} = dummyProps
+      expect(() => {
+          assertPropTypes(Currency.propTypes, props, 'prop', Currency.currencies)
+        }
+      ).toThrowError(/prop `currencies` is marked as required/)
+    })
+
     it('allows for a "type" string prop with value "quote"', () => {
-      const wrapper = shallow(<Currency type='quote' />)
+      const props = {...dummyProps, type: 'quote'}
+      const wrapper = shallow(<Currency {...props} />)
       expect(wrapper.instance().props.type).toEqual('quote')
     })
 
     it('allows for a "type" string prop with value "counter"', () => {
-      const wrapper = shallow(<Currency type='counter' />)
+      const props = {...dummyProps, type: 'counter'}
+      const wrapper = shallow(<Currency {...props} />)
       expect(wrapper.instance().props.type).toEqual('counter')
     })
 
     it('rejects invalid "type" prop values', () => {
-      const props = dummyProps
-      props.type = 'foobar'
+      const props = {...dummyProps, type: 'foobar'}
       expect(() => {
           assertPropTypes(Currency.propTypes, props, 'prop', Currency.type)
         }
       ).toThrowError(/expected one of \["quote","counter"\]/)
-    })
-
-    it('allows for a "currency" string prop', () => {
-      const wrapper = shallow(<Currency currency='EUR' />)
-      expect(wrapper.instance().props.currency).toEqual('EUR')
     })
   })
 
@@ -85,7 +78,7 @@ describe('<Currency />', () => {
     var wrapper = undefined
 
     beforeEach(() => {
-      wrapper = shallow(<Currency type='quote' currency='EUR' />)
+      wrapper = shallow(<Currency {...dummyProps} />)
     })
 
     it('renders as a div.fxp-currency', () => {
@@ -116,21 +109,10 @@ describe('<Currency />', () => {
       expect(resultArea.childAt(0).equals(<input type='text' className='fxp-currency__amount' />)).toBe(true)
       expect(resultArea.childAt(1).equals(<span className='fxp-currency__label'>EUR</span>)).toBe(true)
     })
-  })
 
-  describe('currencies list', () => {
-    it('is populated before the component renders', done => {
-      const wrapper = shallow(<Currency type='quote' currency='EUR' />)
-      setImmediate(() => {
-        const expected = ['EUR', ...Object.keys(response.rates)]
-        expect(wrapper).toHaveState('currencies', expected)
-        done()
-      }, 0)
-    })
-
-    it('renders as a full-fledged list', done => {
-      const wrapper = mount(<Currency type='quote' currency='EUR' />)
-      const expected = ['EUR', ...Object.keys(response.rates)]
+    it('renders currencies as a full-fledged list', done => {
+      const wrapper = mount(<Currency {...dummyProps} />)
+      const expected = dummyProps.currencies
       setImmediate(() => {
         const items = wrapper.update().find('.fxp-currency__list-item')
         items.forEach((option, _) => {
