@@ -17,6 +17,10 @@ class App extends Component {
     }
   }
 
+  onAmountEdited(payload) {
+    this.setState({base: payload})
+  }
+
   currenciesList() {
     const currencies = Object.keys(this.state.currencies)
     return currencies.sort((a, b) => a.localeCompare(b))

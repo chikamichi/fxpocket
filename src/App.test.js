@@ -92,6 +92,15 @@ describe('<App />', () => {
           done()
         }, 0)
       })
+
+      it('is updated upon onAmountEdited()', () => {
+        const newState = {
+          amount: 42,
+          currency: 'EUR'
+        }
+        wrapper.instance().onAmountEdited(newState)
+        expect(wrapper).toHaveState('base', newState)
+      })
     })
   })
 })
