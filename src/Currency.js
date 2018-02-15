@@ -22,7 +22,7 @@ class Currency extends React.Component {
           {currencies}
         </select>
         <div className='fxp-currency__result'>
-          <input type='text' className='fxp-currency__amount' onChange={this.onAmountEdited.bind(this)}/>
+          <input type='text' className='fxp-currency__amount' onChange={this.onAmountEdited.bind(this)} value={this.props.amount || ''}/>
           <span className='fxp-currency__label'>{this.props.currency}</span>
         </div>
       </div>

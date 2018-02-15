@@ -3,36 +3,11 @@ import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 
 import App from './App'
+import { responses, mockInitialApiCalls } from './setupTests'
 
 describe('<App />', () => {
-  const response = {
-    fixer: {
-      latest: {
-        EUR: {
-          base: 'EUR',
-          date: '2018-02-15',
-          rates: {
-            USD: 1.25
-          }
-        },
-        USD: {
-          base: 'USD',
-          date: '2018-02-15',
-          rates: {
-            EUR: 0.8
-          }
-        }
-      }
-    }
-  }
-
   beforeEach(() => {
-    // <App /> pre-fetches rates in widgets order.
-    fetch.mockResponses([
-      JSON.stringify(response.fixer.latest.EUR), {status: 200}
-    ],[
-      JSON.stringify(response.fixer.latest.USD), {status: 200}
-    ])
+    mockInitialApiCalls()
   })
 
   describe('layout', () => {
@@ -93,8 +68,8 @@ describe('<App />', () => {
       })
 
       it('is stored as a [{currency => rates}+] object', done => {
-        const expected = Object.keys(response.fixer.latest).reduce((acc, currency) => {
-          acc[currency] = response.fixer.latest[currency].rates
+        const expected = Object.keys(responses.fixer.latest).reduce((acc, currency) => {
+          acc[currency] = responses.fixer.latest[currency].rates
           return acc
         }, {})
         setImmediate(() => {

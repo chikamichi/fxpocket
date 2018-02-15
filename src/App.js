@@ -63,10 +63,12 @@ class App extends Component {
 
   render() {
     const currencies = this.currenciesList()
+    const cb = this.onAmountEdited.bind(this)
+    const amounts = this.convertAmounts()
     return (
       <div className="fxp">
-        <Currency type='quote' currency='EUR' currencies={currencies} />
-        <Currency type='counter' currency='USD' currencies={currencies} />
+        <Currency type='quote' amount={amounts.EUR} currency='EUR' currencies={currencies} onAmountEdited={cb} />
+        <Currency type='counter' amount={amounts.USD} currency='USD' currencies={currencies} onAmountEdited={cb} />
       </div>
     )
   }
