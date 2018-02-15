@@ -5,16 +5,34 @@ import { shallow } from 'enzyme'
 import App from './App'
 
 describe('<App />', () => {
-  var response
-
-  beforeEach(() => {
-    response = {
-      rates: {
-        EUR: 1,
-        USD: 1.25
+  const response = {
+    fixer: {
+      latest: {
+        EUR: {
+          base: 'EUR',
+          date: '2018-02-15',
+          rates: {
+            USD: 1.25
+          }
+        },
+        USD: {
+          base: 'USD',
+          date: '2018-02-15',
+          rates: {
+            EUR: 0.8
+          }
+        }
       }
     }
-    fetch.mockResponse(JSON.stringify(response))
+  }
+
+  beforeEach(() => {
+    // <App /> pre-fetches rates in widgets order.
+    fetch.mockResponses([
+      JSON.stringify(response.fixer.latest.EUR), {status: 200}
+    ],[
+      JSON.stringify(response.fixer.latest.USD), {status: 200}
+    ])
   })
 
   describe('layout', () => {
@@ -24,14 +42,34 @@ describe('<App />', () => {
     })
   })
 
-  describe('currencies list', () => {
-    it('is populated before the component renders', done => {
+  describe('Currency#currenciesList()', () => {
+    it('extracts the list of currencies from the state', done => {
       const wrapper = shallow(<App />)
       setImmediate(() => {
-        const expected = Object.keys(response.rates)
-        expect(wrapper).toHaveState('currencies', expected)
+        expect(wrapper.instance().currenciesList()).toEqual(['EUR', 'USD'])
         done()
       }, 0)
+    })
+  })
+
+  describe('state', () => {
+    describe('.currencies', () => {
+      it('is initially an empty object', () => {
+        const wrapper = shallow(<App />)
+        expect(wrapper).toHaveState('currencies', {})
+      })
+
+      it('is stored as a [{currency => rates}+] object', done => {
+        const wrapper = shallow(<App />)
+        const expected = Object.keys(response.fixer.latest).reduce((acc, currency) => {
+          acc[currency] = response.fixer.latest[currency].rates
+          return acc
+        }, {})
+        setImmediate(() => {
+          expect(wrapper).toHaveState('currencies', expected)
+          done()
+        }, 0)
+      })
     })
   })
 })
