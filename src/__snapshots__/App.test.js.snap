@@ -1,14 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`layout looks like the registered snapshot 1`] = `
+exports[`<App /> layout looks like the registered snapshot 1`] = `
 <div
   className="fxp"
 >
   <Currency
+    currencies={Array []}
     currency="EUR"
     type="quote"
   />
   <Currency
+    currencies={Array []}
     currency="USD"
     type="counter"
   />
