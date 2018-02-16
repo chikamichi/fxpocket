@@ -22,6 +22,16 @@ class App extends Component {
     this.setState({base: payload})
   }
 
+  onCurrencyEdited(payload) {
+    const idx = payload.uuid
+    const newState = [
+      ...this.state.widgets.slice(0, idx),
+      payload.currency,
+      ...this.state.widgets.slice(idx+1)
+    ]
+    this.setState({widgets: newState})
+  }
+
   convertAmounts() {
     const base = this.state.base
     if (!base.amount || !base.currency) return {}
@@ -66,12 +76,25 @@ class App extends Component {
 
   render() {
     const currencies = this.currenciesList()
-    const cb = this.onAmountEdited.bind(this)
+    const cb = {
+      onAmountEdited: this.onAmountEdited.bind(this),
+      onCurrencyEdited: this.onCurrencyEdited.bind(this)
+    }
     const amounts = this.convertAmounts()
+    const widgets = this.state.widgets.map((currency, i) => {
+      return <Currency
+        key={i} // key is simply the position in this.state.widgets
+        uuid={i}
+        type='quote' // TODO: remove this type prop
+        amount={amounts[currency]}
+        currency={currency}
+        currencies={currencies}
+        onAmountEdited={cb.onAmountEdited}
+        onCurrencyEdited={cb.onCurrencyEdited} />
+    })
     return (
       <div className="fxp">
-        <Currency type='quote' amount={amounts.EUR} currency='EUR' currencies={currencies} onAmountEdited={cb} />
-        <Currency type='counter' amount={amounts.USD} currency='USD' currencies={currencies} onAmountEdited={cb} />
+        {widgets}
       </div>
     )
   }

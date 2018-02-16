@@ -38,4 +38,33 @@ describe('<App />', () => {
       ).toEqual(1.25)
     })()
   })
+
+  it('reacts to the currency being edited', () => {
+    return hereafter((expect, when) => {
+      // For the App initially asynchronously fetches the currencies rates, its
+      // children components are not synchronously populated. The following
+      // no-op expectation ("app") is required to bootstrap the app within
+      // hereafter asynchronous stack. Use it in conjunction with .update()
+      // to access the initial state resulting from the initial async fetch.
+      expect(() => app)
+      when(() => {
+        const widgets = app.update().find('.fxp-currency')
+        const quoteWidget = widgets.at(0)
+        const amountInput = quoteWidget.find('.fxp-currency__amount')
+        const currencySelector = quoteWidget.find('.fxp-currency__list')
+        amountInput.simulate('change', {
+          target: { value: 1 }
+        })
+        currencySelector.simulate('change', {
+          target: { value: 'USD' }
+        })
+      })
+      expect(() =>
+        app.find('.fxp-currency').at(0).find('.fxp-currency__amount').props().value
+      ).toEqual(1.25)
+      expect(() =>
+        app.find('.fxp-currency').at(1).find('.fxp-currency__amount').props().value
+      ).toEqual(1.25)
+    })()
+  })
 })
