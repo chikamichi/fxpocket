@@ -106,16 +106,12 @@ describe('<Currency />', () => {
       expect(wrapper.is('div.fxp-currency')).toBe(true)
     })
 
-    it('renders as a div.fxp-currency--{type}', () => {
-      expect(wrapper.is('div.fxp-currency--quote')).toBe(true)
+    it('then renders a result area', () => {
+      expect(wrapper.childAt(0).is('div.fxp-currency__result')).toBe(true)
     })
 
     it('first renders a currency drop-down', () => {
-      expect(wrapper.childAt(0).is('select.fxp-currency__list')).toBe(true)
-    })
-
-    it('then renders a result area', () => {
-      expect(wrapper.childAt(1).is('div.fxp-currency__result')).toBe(true)
+      expect(wrapper.childAt(1).is('select.fxp-currency__list')).toBe(true)
     })
 
     it('pre-selects the specified currency', () => {
@@ -132,7 +128,7 @@ describe('<Currency />', () => {
       // const onChange = wrapper.instance().onAmountEdited
       // console.log(onChange)
       // expect(resultArea.childAt(0).equals(<input type='text' className='fxp-currency__amount' onChange={onChange} />)).toBe(true)
-      expect(resultArea.childAt(1).equals(<span className='fxp-currency__label'>EUR</span>)).toBe(true)
+      expect(resultArea.childAt(1).equals(<span className='fxp-currency__label'>€</span>)).toBe(true)
     })
 
     it('renders currencies as a full-fledged list', async () => {
@@ -147,7 +143,10 @@ describe('<Currency />', () => {
       const itemsAsKeys = items.map((option, _) => option.key())
       expect(itemsAsKeys).toEqual(expected)
       const itemsAsText = items.map((option, _) => option.text())
-      expect(itemsAsText).toEqual(expected)
+      itemsAsText.forEach((text, idx) => {
+        const rx = new RegExp('^' + expected[idx] + ' / .+$')
+        expect(text).toMatch(rx)
+      })
     })
   })
 

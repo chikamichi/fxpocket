@@ -1,22 +1,9 @@
 import React, { Component } from 'react'
-import 'whatwg-fetch'
 
 import Currency from './Currency'
-import { round } from './utils'
+import { INITIAL_STATE, round } from './utils'
 import Fixer from './fixer'
 import './App.css'
-
-const INITIAL_STATE = {
-  // Keeps track of app's startup process.
-  init: false,
-  // A list of currency widgets to display at startup.
-  widgets: ['EUR', 'USD'],
-  // Keeps track of user intents.
-  base: {
-    amount: undefined,
-    currency: undefined
-  }
-}
 
 class App extends Component {
   constructor(props) {
@@ -67,7 +54,7 @@ class App extends Component {
   }
 
   render() {
-    if (!this.state.init) return <p>loading app</p>
+    if (!this.state.init) return <div className='fxp-loading'></div>
     const currencies = this.fixer.currencies
     const cb = {
       onAmountEdited: this.onAmountEdited.bind(this),
@@ -86,7 +73,7 @@ class App extends Component {
         onCurrencyEdited={cb.onCurrencyEdited} />
     })
     return (
-      <div className="fxp">
+      <div className="fxp-app">
         {widgets}
       </div>
     )

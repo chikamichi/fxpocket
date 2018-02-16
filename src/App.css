@@ -1,35 +1,115 @@
+@-webkit-keyframes sk-scaleout {
+  0% { -webkit-transform: scale(0) }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 100% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+body {
+  background: cornsilk;
+}
+
 #root {
   display: flex;
   justify-content: center;
 }
 
-/* fxPocket App => fxp- namespace */
 .fxp {
+  text-align: center;
+}
+
+.fxp-title {
+  margin-bottom: 0;
+  color: brown;
+}
+
+.fxp-motto {
+  margin-top: 0;
+  font-size: 1em;
+  color: slategray;
+}
+
+/* fxPocket App => fxp- namespace */
+.fxp-app {
   display: flex;
+  margin: 2em 0;
+}
+
+/* Borrowed from http://tobiasahlin.com/spinkit/ */
+.fxp-loading {
+  width: 40px;
+  height: 40px;
+  margin: 100px auto;
+  background-color: #333;
+  border-radius: 100%;
+  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
 }
 
 .fxp-currency {
   display: flex;
   flex-grow: 1;
-  padding: 20px;
-}
-
-.fxp-currency--quote {
-  display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  margin: 10px;
+  box-shadow: 2px 2px lightgrey;
+  padding: 4px;
+  border-radius: 4px;
+  background: wheat;
 }
 
-.fxp-currency--counter {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+.fxp-currency__list {
+  color: lightgrey;
 }
 
 .fxp-currency__result {
-  margin-top: 0.8em;
+  padding: 10px;
+  background: white;
+  border: 1px solid lightgrey;
+}
+
+.fxp-currency__amount {
+  border: none;
+  background: transparent;
 }
 
 .fxp-currency__label {
-  padding-left: 0.8em;
+  padding-left: 0.5em;
+  vertical-align: middle;
+}
+
+.fxp-footer-links {
+  list-style: none;
+  font-size: 0.8em;
+}
+
+.fxp-footer-links .fxp-u-list__item {
+  display: inline;
+  margin-left: 1em;
+}
+
+.fxp-footer-links .fxp-u-list__item:first-child {
+  margin-left: 0;
+}
+
+.fxp-footer-link,
+.fxp-footer-link:visited {
+  color: grey;
+  text-decoration: none;
+}
+
+.fxp-footer-link:hover {
+  text-decoration: underline;
 }
