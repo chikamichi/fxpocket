@@ -15,17 +15,17 @@ class App extends Component {
     this.setState({base: payload})
   }
 
-  onCurrencyEdited(payload) {
+  onCurrencyEdited(payload, updateBase = true) {
     const idx = payload.uuid
     const newWidgetsState = [
       ...this.state.widgets.slice(0, idx),
       payload.currency,
       ...this.state.widgets.slice(idx+1)
     ]
-    const newBaseState = {
+    const newBaseState = updateBase ? {
       amount: payload.amount,
       currency: payload.currency
-    }
+    } : this.state.base
     this.setState({
       widgets: newWidgetsState,
       base: newBaseState
