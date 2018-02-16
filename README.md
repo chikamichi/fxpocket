@@ -31,6 +31,7 @@ Then go check http://localhost:3000/.
 * [Pull Request #9](https://github.com/chikamichi/fxpocket/pull/9) demonstrates a simple API-aware component's lifecycle, with underlying limitations.
 * [Pull Request #11](https://github.com/chikamichi/fxpocket/pull/12) demonstrates the "Lifting State Up" pattern.
 * [Pull Request #15](https://github.com/chikamichi/fxpocket/pull/15) demonstrates a more complex PR, including review and incrementally fixing code chunks based on peer-feedback.
+* [Pull Request #21](https://github.com/chikamichi/fxpocket/pull/21) demonstrates TDD bug-fixing on a grown-up project.
 
 ## Quality of Life
 
