@@ -33,7 +33,13 @@ class Currency extends React.Component {
     return (
       <div className='fxp-currency'>
         <div className='fxp-currency__result'>
-          <input type='text' className='fxp-currency__amount' onChange={this.onAmountEdited.bind(this)} value={this.props.amount || ''}/>
+          <input
+            type='text'
+            className='fxp-currency__amount'
+            onChange={this.onAmountEdited.bind(this)}
+            value={this.props.amount || ''}
+            ref={input => input && this.props.uuid === 0 && input.focus()}
+          />
           <span className='fxp-currency__label'>{currencySymbol}</span>
         </div>
         <select value={this.props.currency} className='fxp-currency__list' onChange={this.onCurrencyEdited.bind(this)}>
