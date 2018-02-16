@@ -60,25 +60,31 @@ body {
 .fxp-currency {
   display: flex;
   flex-grow: 1;
-  padding: 20px;
-}
-
-.fxp-currency--quote {
-  display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  margin: 10px;
+  box-shadow: 2px 2px lightgrey;
+  padding: 4px;
+  border-radius: 4px;
+  background: wheat;
 }
 
-.fxp-currency--counter {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+.fxp-currency__list {
+  color: lightgrey;
 }
 
 .fxp-currency__result {
-  margin-top: 0.8em;
+  padding: 10px;
+  background: white;
+  border: 1px solid lightgrey;
+}
+
+.fxp-currency__amount {
+  border: none;
+  background: transparent;
 }
 
 .fxp-currency__label {
-  padding-left: 0.8em;
+  padding-left: 0.5em;
+  vertical-align: middle;
 }
