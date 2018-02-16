@@ -7,14 +7,20 @@ exports[`<App /> layout looks like the registered snapshot 1`] = `
   <Currency
     currencies={Array []}
     currency="EUR"
+    key="0"
     onAmountEdited={[Function]}
+    onCurrencyEdited={[Function]}
     type="quote"
+    uuid={0}
   />
   <Currency
     currencies={Array []}
     currency="USD"
+    key="1"
     onAmountEdited={[Function]}
-    type="counter"
+    onCurrencyEdited={[Function]}
+    type="quote"
+    uuid={1}
   />
 </div>
 `;

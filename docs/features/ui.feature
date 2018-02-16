@@ -15,3 +15,9 @@ Feature: Self-explanatory, basic layout
     Given I just loaded the app
     When I enter a digit in the left currency widget's input
     Then the matching conversion should be displayed in the right widget's input
+
+  Scenario: User selects a different currency which updates counter amount
+    Given I just loaded the app
+    And I got some amount converted
+    When I select a different currency in the left currency widget's dropdown
+    Then the matching conversion should be updated in the right widget's input

@@ -82,6 +82,24 @@ describe('<App />', () => {
       })
     })
 
+    describe('.widgets', () => {
+      const initialState = ['EUR', 'USD']
+
+      it('initially instructs to display two widgets, EUR and USD', () => {
+        expect(wrapper).toHaveState('widgets', initialState)
+      })
+
+      it('is updated upon onCurrencyEdited()', () => {
+        const payload = {
+          uuid: 0,
+          currency: 'USD'
+        }
+        const newState = ['USD', 'USD']
+        wrapper.instance().onCurrencyEdited(payload)
+        expect(wrapper).toHaveState('widgets', newState)
+      })
+    })
+
     describe('.base', () => {
       const initialState = {
         amount: undefined,
@@ -89,10 +107,6 @@ describe('<App />', () => {
       }
 
       it('is initially empty', () => {
-        expect(wrapper).toHaveState('base', initialState)
-      })
-
-      it('remains empty in the absence of a user\'s triggered update', () => {
         expect(wrapper).toHaveState('base', initialState)
       })
 

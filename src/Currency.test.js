@@ -6,10 +6,13 @@ import Currency from './Currency'
 
 describe('<Currency />', () => {
   const dummyProps = {
+    key: 0,
+    uuid: 0,
     type: 'quote',
     currency: 'EUR',
     currencies: ['EUR', 'USD'],
-    onAmountEdited: () => {}
+    onAmountEdited: () => {},
+    onCurrencyEdited: () => {}
   }
 
   describe('props', () => {
@@ -60,6 +63,14 @@ describe('<Currency />', () => {
           assertPropTypes(Currency.propTypes, props, 'prop', Currency.onAmountEdited)
         }
       ).toThrowError(/prop `onAmountEdited` is marked as required/)
+    })
+
+    it('requires a "onCurrencyEdited" function prop', () => {
+      const {onCurrencyEdited, ...props} = dummyProps
+      expect(() => {
+          assertPropTypes(Currency.propTypes, props, 'prop', Currency.onCurrencyEdited)
+        }
+      ).toThrowError(/prop `onCurrencyEdited` is marked as required/)
     })
 
     it('allows for a "type" string prop with value "quote"', () => {
@@ -123,7 +134,7 @@ describe('<Currency />', () => {
       expect(resultArea.childAt(1).equals(<span className='fxp-currency__label'>EUR</span>)).toBe(true)
     })
 
-    it.only('renders currencies as a full-fledged list', async () => {
+    it('renders currencies as a full-fledged list', async () => {
       const wrapper = await mount(<Currency {...dummyProps} />)
       const expected = dummyProps.currencies
       const items = wrapper.update().find('.fxp-currency__list-item')
@@ -152,6 +163,22 @@ describe('<Currency />', () => {
         expect(spy).toHaveBeenLastCalledWith({
           amount: 42,
           currency: wrapper.instance().props.currency
+        })
+      })
+    })
+
+    describe('upon editing the currency', () => {
+      it('triggers props.onCurrencyEdited', async () => {
+        const spy = jest.fn()
+        const props = {...dummyProps, onCurrencyEdited: spy}
+        const wrapper = await shallow(<Currency {...props} />)
+        wrapper.update().find('.fxp-currency__list').simulate('change', {
+          target: { value: 'USD' }
+        })
+        expect(spy).toHaveBeenCalledTimes(1)
+        expect(spy).toHaveBeenLastCalledWith({
+          uuid: 0,
+          currency: 'USD'
         })
       })
     })

@@ -9,6 +9,13 @@ class Currency extends React.Component {
     })
   }
 
+  onCurrencyEdited(event) {
+    this.props.onCurrencyEdited({
+      uuid: this.props.uuid,
+      currency: event.target.value
+    })
+  }
+
   render() {
     if (!this.props.currencies.length) {
       return <p>loading…</p>
@@ -18,7 +25,7 @@ class Currency extends React.Component {
     )
     return (
       <div className={`fxp-currency  fxp-currency--${this.props.type}`}>
-        <select value={this.props.currency} className='fxp-currency__list'>
+        <select value={this.props.currency} className='fxp-currency__list' onChange={this.onCurrencyEdited.bind(this)}>
           {currencies}
         </select>
         <div className='fxp-currency__result'>
@@ -34,7 +41,8 @@ Currency.propTypes = {
   type: PropTypes.oneOf(['quote', 'counter']).isRequired,
   currency: PropTypes.string.isRequired,
   currencies: PropTypes.array.isRequired,
-  onAmountEdited: PropTypes.func.isRequired
+  onAmountEdited: PropTypes.func.isRequired,
+  onCurrencyEdited: PropTypes.func.isRequired
 }
 
 export default Currency
