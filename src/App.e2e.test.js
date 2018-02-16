@@ -67,10 +67,10 @@ describe('<App />', () => {
       })
       expect(() =>
         app.find('.fxp-currency').at(0).find('.fxp-currency__amount').props().value
-      ).toEqual(1.25)
+      ).toEqual(1)
       expect(() =>
         app.find('.fxp-currency').at(1).find('.fxp-currency__amount').props().value
-      ).toEqual(1.25)
+      ).toEqual(1)
     })()
   })
 })

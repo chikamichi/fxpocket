@@ -24,12 +24,19 @@ class App extends Component {
 
   onCurrencyEdited(payload) {
     const idx = payload.uuid
-    const newState = [
+    const newWidgetsState = [
       ...this.state.widgets.slice(0, idx),
       payload.currency,
       ...this.state.widgets.slice(idx+1)
     ]
-    this.setState({widgets: newState})
+    const newBaseState = {
+      amount: payload.amount,
+      currency: payload.currency
+    }
+    this.setState({
+      widgets: newWidgetsState,
+      base: newBaseState
+    })
   }
 
   convertAmounts() {

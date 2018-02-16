@@ -12,6 +12,7 @@ class Currency extends React.Component {
   onCurrencyEdited(event) {
     this.props.onCurrencyEdited({
       uuid: this.props.uuid,
+      amount: this.props.amount,
       currency: event.target.value
     })
   }
