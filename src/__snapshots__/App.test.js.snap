@@ -2,7 +2,7 @@
 
 exports[`<App /> layout looks like the registered snapshot 1`] = `
 <div
-  className="fxp"
+  className="fxp-app"
 >
   <Currency
     currencies={

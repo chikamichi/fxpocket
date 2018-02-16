@@ -67,7 +67,7 @@ class App extends Component {
   }
 
   render() {
-    if (!this.state.init) return <p>loading app</p>
+    if (!this.state.init) return <div className='fxp-loading'></div>
     const currencies = this.fixer.currencies
     const cb = {
       onAmountEdited: this.onAmountEdited.bind(this),
@@ -86,7 +86,7 @@ class App extends Component {
         onCurrencyEdited={cb.onCurrencyEdited} />
     })
     return (
-      <div className="fxp">
+      <div className="fxp-app">
         {widgets}
       </div>
     )
