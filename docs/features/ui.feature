@@ -10,3 +10,8 @@ Feature: Self-explanatory, basic layout
     Then the "quote" currency column should be "EUR"
     Then the "counter" currency should be "USD"
     Then the amounts should be empty
+
+  Scenario: User enters an amount which is immediately converted
+    Given I just loaded the app
+    When I enter a digit in the left currency widget's input
+    Then the matching conversion should be displayed in the right widget's input

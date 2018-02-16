@@ -8,7 +8,8 @@ describe('<Currency />', () => {
   const dummyProps = {
     type: 'quote',
     currency: 'EUR',
-    currencies: ['EUR', 'USD']
+    currencies: ['EUR', 'USD'],
+    onAmountEdited: () => {}
   }
 
   describe('props', () => {
@@ -51,6 +52,14 @@ describe('<Currency />', () => {
           assertPropTypes(Currency.propTypes, props, 'prop', Currency.currencies)
         }
       ).toThrowError(/prop `currencies` is marked as required/)
+    })
+
+    it('requires a "onAmountEdited" function prop', () => {
+      const {onAmountEdited, ...props} = dummyProps
+      expect(() => {
+          assertPropTypes(Currency.propTypes, props, 'prop', Currency.onAmountEdited)
+        }
+      ).toThrowError(/prop `onAmountEdited` is marked as required/)
     })
 
     it('allows for a "type" string prop with value "quote"', () => {
@@ -106,26 +115,45 @@ describe('<Currency />', () => {
     it('displays a text input to enter an amount, with an explicit unit', () => {
       const resultArea = wrapper.find('.fxp-currency__result')
       expect(resultArea.children().length).toEqual(2)
-      expect(resultArea.childAt(0).equals(<input type='text' className='fxp-currency__amount' />)).toBe(true)
+      // expect(resultArea.childAt(0).html().is('<input type="text" class="fxp-currency__amount"/>')).toBe(true)
+      // expect(resultArea.childAt(0).equals(<input type='text' className='fxp-currency__amount' />)).toBe(true)
+      // const onChange = wrapper.instance().onAmountEdited
+      // console.log(onChange)
+      // expect(resultArea.childAt(0).equals(<input type='text' className='fxp-currency__amount' onChange={onChange} />)).toBe(true)
       expect(resultArea.childAt(1).equals(<span className='fxp-currency__label'>EUR</span>)).toBe(true)
     })
 
-    it('renders currencies as a full-fledged list', done => {
-      const wrapper = mount(<Currency {...dummyProps} />)
+    it.only('renders currencies as a full-fledged list', async () => {
+      const wrapper = await mount(<Currency {...dummyProps} />)
       const expected = dummyProps.currencies
-      setImmediate(() => {
-        const items = wrapper.update().find('.fxp-currency__list-item')
-        items.forEach((option, _) => {
-          expect(option.is('option')).toBe(true)
+      const items = wrapper.update().find('.fxp-currency__list-item')
+      items.forEach((option, _) => {
+        expect(option.is('option')).toBe(true)
+      })
+      const itemsAsValues = items.map((option, _) => option.prop('value'))
+      expect(itemsAsValues).toEqual(expected)
+      const itemsAsKeys = items.map((option, _) => option.key())
+      expect(itemsAsKeys).toEqual(expected)
+      const itemsAsText = items.map((option, _) => option.text())
+      expect(itemsAsText).toEqual(expected)
+    })
+  })
+
+  describe('events', () => {
+    describe('upon editing the amount', () => {
+      it('triggers props.onAmountEdited', async () => {
+        const spy = jest.fn()
+        const props = {...dummyProps, onAmountEdited: spy}
+        const wrapper = await shallow(<Currency {...props} />)
+        wrapper.update().find('.fxp-currency__amount').simulate('change', {
+          target: { value: 42 }
         })
-        const itemsAsValues = items.map((option, _) => option.prop('value'))
-        expect(itemsAsValues).toEqual(expected)
-        const itemsAsKeys = items.map((option, _) => option.key())
-        expect(itemsAsKeys).toEqual(expected)
-        const itemsAsText = items.map((option, _) => option.text())
-        expect(itemsAsText).toEqual(expected)
-        done()
-      }, 0)
+        expect(spy).toHaveBeenCalledTimes(1)
+        expect(spy).toHaveBeenLastCalledWith({
+          amount: 42,
+          currency: wrapper.instance().props.currency
+        })
+      })
     })
   })
 })
