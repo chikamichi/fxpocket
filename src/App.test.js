@@ -92,6 +92,7 @@ describe('<App />', () => {
       it('is updated upon onCurrencyEdited()', () => {
         const payload = {
           uuid: 0,
+          amount: 42,
           currency: 'USD'
         }
         const newState = ['USD', 'USD']
@@ -116,6 +117,20 @@ describe('<App />', () => {
           currency: 'EUR'
         }
         wrapper.instance().onAmountEdited(newState)
+        expect(wrapper).toHaveState('base', newState)
+      })
+
+      it('is updated upon onCurrencyEdited()', () => {
+        const payload = {
+          uuid: 0,
+          amount: 42,
+          currency: 'USD'
+        }
+        const newState = {
+          amount: 42,
+          currency: 'USD'
+        }
+        wrapper.instance().onCurrencyEdited(payload)
         expect(wrapper).toHaveState('base', newState)
       })
     })
