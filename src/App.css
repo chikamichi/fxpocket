@@ -44,6 +44,7 @@ body {
 /* fxPocket App => fxp- namespace */
 .fxp-app {
   display: flex;
+  margin: 2em 0;
 }
 
 /* Borrowed from http://tobiasahlin.com/spinkit/ */
@@ -87,4 +88,28 @@ body {
 .fxp-currency__label {
   padding-left: 0.5em;
   vertical-align: middle;
+}
+
+.fxp-footer-links {
+  list-style: none;
+  font-size: 0.8em;
+}
+
+.fxp-footer-links .fxp-u-list__item {
+  display: inline;
+  margin-left: 1em;
+}
+
+.fxp-footer-links .fxp-u-list__item:first-child {
+  margin-left: 0;
+}
+
+.fxp-footer-link,
+.fxp-footer-link:visited {
+  color: grey;
+  text-decoration: none;
+}
+
+.fxp-footer-link:hover {
+  text-decoration: underline;
 }
