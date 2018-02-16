@@ -29,7 +29,6 @@ describe('<App />', () => {
         const widgets = app.update().find('.fxp-currency')
         const quoteWidget = widgets.at(0)
         const amountInput = quoteWidget.find('.fxp-currency__amount')
-        console.log(amountInput.html())
         amountInput.simulate('change', {
           target: { value: 1 }
         })
