@@ -17,7 +17,7 @@ describe('<App />', () => {
     app = mount(<App />)
   })
 
-  it.only('reacts to amount being edited', () => {
+  it('reacts to amount being edited', () => {
     return hereafter((expect, when) => {
       // For the App initially asynchronously fetches the currencies rates, its
       // children components are not synchronously populated. The following

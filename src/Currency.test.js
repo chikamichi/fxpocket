@@ -123,42 +123,36 @@ describe('<Currency />', () => {
       expect(resultArea.childAt(1).equals(<span className='fxp-currency__label'>EUR</span>)).toBe(true)
     })
 
-    it('renders currencies as a full-fledged list', done => {
-      const wrapper = mount(<Currency {...dummyProps} />)
+    it.only('renders currencies as a full-fledged list', async () => {
+      const wrapper = await mount(<Currency {...dummyProps} />)
       const expected = dummyProps.currencies
-      setImmediate(() => {
-        const items = wrapper.update().find('.fxp-currency__list-item')
-        items.forEach((option, _) => {
-          expect(option.is('option')).toBe(true)
-        })
-        const itemsAsValues = items.map((option, _) => option.prop('value'))
-        expect(itemsAsValues).toEqual(expected)
-        const itemsAsKeys = items.map((option, _) => option.key())
-        expect(itemsAsKeys).toEqual(expected)
-        const itemsAsText = items.map((option, _) => option.text())
-        expect(itemsAsText).toEqual(expected)
-        done()
-      }, 0)
+      const items = wrapper.update().find('.fxp-currency__list-item')
+      items.forEach((option, _) => {
+        expect(option.is('option')).toBe(true)
+      })
+      const itemsAsValues = items.map((option, _) => option.prop('value'))
+      expect(itemsAsValues).toEqual(expected)
+      const itemsAsKeys = items.map((option, _) => option.key())
+      expect(itemsAsKeys).toEqual(expected)
+      const itemsAsText = items.map((option, _) => option.text())
+      expect(itemsAsText).toEqual(expected)
     })
   })
 
   describe('events', () => {
     describe('upon editing the amount', () => {
-      it('triggers props.onAmountEdited', done => {
+      it('triggers props.onAmountEdited', async () => {
         const spy = jest.fn()
         const props = {...dummyProps, onAmountEdited: spy}
-        const wrapper = shallow(<Currency {...props} />)
-        setImmediate(() => {
-          wrapper.update().find('.fxp-currency__amount').simulate('change', {
-            target: { value: 42 }
-          })
-          expect(spy).toHaveBeenCalledTimes(1)
-          expect(spy).toHaveBeenLastCalledWith({
-            amount: 42,
-            currency: wrapper.instance().props.currency
-          })
-          done()
-        }, 0)
+        const wrapper = await shallow(<Currency {...props} />)
+        wrapper.update().find('.fxp-currency__amount').simulate('change', {
+          target: { value: 42 }
+        })
+        expect(spy).toHaveBeenCalledTimes(1)
+        expect(spy).toHaveBeenLastCalledWith({
+          amount: 42,
+          currency: wrapper.instance().props.currency
+        })
       })
     })
   })

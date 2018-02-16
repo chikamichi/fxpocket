@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import 'whatwg-fetch'
 
 import Currency from './Currency'
+import { round } from './utils'
 import './App.css'
 
 class App extends Component {
@@ -25,10 +26,12 @@ class App extends Component {
     const base = this.state.base
     if (!base.amount || !base.currency) return {}
     return this.currenciesList().reduce((acc, currency) => {
+      let amount
       if (base.currency === currency)
-        acc[currency] = base.amount
+        amount = base.amount
       else
-        acc[currency] = base.amount * this.state.currencies[base.currency][currency]
+        amount = base.amount * this.state.currencies[base.currency][currency]
+      acc[currency] = round(amount, 2)
       return acc
     }, {})
   }
