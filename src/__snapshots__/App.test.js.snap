@@ -5,7 +5,12 @@ exports[`<App /> layout looks like the registered snapshot 1`] = `
   className="fxp"
 >
   <Currency
-    currencies={Array []}
+    currencies={
+      Array [
+        "EUR",
+        "USD",
+      ]
+    }
     currency="EUR"
     key="0"
     onAmountEdited={[Function]}
@@ -14,7 +19,12 @@ exports[`<App /> layout looks like the registered snapshot 1`] = `
     uuid={0}
   />
   <Currency
-    currencies={Array []}
+    currencies={
+      Array [
+        "EUR",
+        "USD",
+      ]
+    }
     currency="USD"
     key="1"
     onAmountEdited={[Function]}

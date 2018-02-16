@@ -4,7 +4,6 @@ import { mount } from 'enzyme'
 const hereafter = require('hereafter')
 
 import App from './App'
-import { responses, mockInitialApiCalls } from './setupTests'
 
 hereafter.useJestExpect(expect);
 
@@ -35,18 +34,11 @@ describe('<App />', () => {
   var app
 
   beforeEach(() => {
-    mockInitialApiCalls()
     app = mount(<App />)
   })
 
   it('reacts to amount being edited', () => {
     return hereafter((expect, when) => {
-      // For the App initially asynchronously fetches the currencies rates, its
-      // children components are not synchronously populated. The following
-      // no-op expectation ("app") is required to bootstrap the app within
-      // hereafter asynchronous stack. Use it in conjunction with .update()
-      // to access the initial state resulting from the initial async fetch.
-      expect(() => app)
       when(() => {
         const step = new Scenario(app)
         step.editAmount(0,1)
@@ -59,7 +51,6 @@ describe('<App />', () => {
 
   it('reacts to the currency being edited', () => {
     return hereafter((expect, when) => {
-      expect(() => app)
       when(() => {
         const step = new Scenario(app)
         step.editAmount(0,1)

@@ -2,37 +2,10 @@
 import { configure } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import 'jest-enzyme'
-import fetchMock from 'jest-fetch-mock'
+import Fixer from './fixer'
+
+// Implicit mocking doesn't seem to apply to user-modules. Let's mock explicitly.
+// @see https://facebook.github.io/jest/docs/en/manual-mocks.html
+jest.mock('./fixer')
 
 configure({ adapter: new Adapter() })
-global.fetch = fetchMock
-
-export const responses = {
-  fixer: {
-    latest: {
-      EUR: {
-        base: 'EUR',
-        date: '2018-02-15',
-        rates: {
-          USD: 1.25
-        }
-      },
-      USD: {
-        base: 'USD',
-        date: '2018-02-15',
-        rates: {
-          EUR: 0.8
-        }
-      }
-    }
-  }
-}
-
-// <App /> pre-fetches currencies' rates, in widgets order.
-export const mockInitialApiCalls = () => {
-  fetch.mockResponses([
-    JSON.stringify(responses.fixer.latest.EUR), {status: 200}
-  ],[
-    JSON.stringify(responses.fixer.latest.USD), {status: 200}
-  ])
-}

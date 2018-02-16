@@ -18,9 +18,6 @@ class Currency extends React.Component {
   }
 
   render() {
-    if (!this.props.currencies.length) {
-      return <p>loading…</p>
-    }
     const currencies = this.props.currencies.map((currency) =>
       <option className='fxp-currency__list-item' value={currency} key={currency}>{currency}</option>
     )
