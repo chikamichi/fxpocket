@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import Currency from './Currency'
-import { INITIAL_STATE, convertAmounts } from './utils'
+import { INITIAL_STATE, convertAmount, convertAmounts } from './utils'
 import Fixer from './fixer'
 import './App.css'
 
@@ -12,7 +12,12 @@ class App extends Component {
   }
 
   onAmountEdited(payload) {
-    this.setState({baseAmount: payload.amount})
+    let newBaseAmount
+    if (payload.uuid === 0)
+      newBaseAmount = payload.amount
+    else
+      newBaseAmount = this.convertAmount(payload.amount, this.state.widgets[payload.uuid], this.state.widgets[0])
+    this.setState({baseAmount: newBaseAmount})
   }
 
   onCurrencyEdited(payload, updateBaseAmount = true) {
@@ -31,6 +36,7 @@ class App extends Component {
   componentDidMount() {
     Fixer.connect().then(fixer => {
       this.fixer = fixer
+      this.convertAmount = convertAmount(fixer)
       this.convertAmounts = convertAmounts(fixer)
       this.setState({init: true})
     })

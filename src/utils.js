@@ -22,6 +22,14 @@ export function round(value, decimals) {
   return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
 
+export function convertAmount(fixer, amount, baseCurrency, quoteCurrency) {
+  if (arguments.length === 1 && arguments[0] instanceof Fixer)
+    return (amount, baseCurrency, quoteCurrency) =>
+      convertAmount.bind({}, fixer)(amount, baseCurrency, quoteCurrency)
+
+  return amount * fixer.rates[baseCurrency][quoteCurrency]
+}
+
 export function convertAmounts(fixer, context = {}) {
   if (arguments.length === 1 && arguments[0] instanceof Fixer)
     return (context = {}) => convertAmounts.bind({}, fixer)(context)
@@ -33,7 +41,7 @@ export function convertAmounts(fixer, context = {}) {
     if (context.currency === currency)
       amount = context.amount
     else
-      amount = context.amount * fixer.rates[context.currency][currency]
+      amount = convertAmount(fixer, context.amount, context.currency, currency)
     acc[currency] = round(amount, 2)
     return acc
   }, {})
