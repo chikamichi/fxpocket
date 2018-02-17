@@ -47,7 +47,11 @@ class App extends Component {
       onAmountEdited: this.onAmountEdited.bind(this),
       onCurrencyEdited: this.onCurrencyEdited.bind(this)
     }
-    const amounts = this.convertAmounts(this.state.base)
+    const amounts = this.convertAmounts({
+      amount: this.state.base.amount,
+      currency: this.state.widgets[0],
+      currencies: this.state.widgets
+    })
     const widgets = this.state.widgets.map((currency, i) => {
       return <Currency
         key={i} // key is simply the position in this.state.widgets
