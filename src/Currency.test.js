@@ -161,8 +161,8 @@ describe('<Currency />', () => {
         })
         expect(spy).toHaveBeenCalledTimes(1)
         expect(spy).toHaveBeenLastCalledWith({
-          amount: 42,
-          currency: wrapper.instance().props.currency
+          uuid: 0,
+          amount: 42
         })
       })
     })
@@ -180,7 +180,7 @@ describe('<Currency />', () => {
           uuid: 0,
           amount: 42,
           currency: 'USD'
-        })
+        }, true)
       })
     })
   })

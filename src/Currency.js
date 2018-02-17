@@ -7,8 +7,8 @@ import { currencyWording } from './utils'
 class Currency extends React.Component {
   onAmountEdited(event) {
     this.props.onAmountEdited({
-      amount: event.target.value,
-      currency: this.props.currency
+      uuid: this.props.uuid,
+      amount: event.target.value
     })
   }
 
@@ -17,7 +17,7 @@ class Currency extends React.Component {
       uuid: this.props.uuid,
       amount: this.props.amount,
       currency: event.target.value
-    })
+    }, this.props.uuid === 0)
   }
 
   render() {
@@ -38,7 +38,7 @@ class Currency extends React.Component {
             className='fxp-currency__amount'
             onChange={this.onAmountEdited.bind(this)}
             value={this.props.amount || ''}
-            ref={input => input && this.props.uuid === 0 && input.focus()}
+            // ref={input => input && this.props.uuid === 0 && input.focus()}
           />
           <span className='fxp-currency__label'>{currencySymbol}</span>
         </div>

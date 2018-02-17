@@ -19,11 +19,11 @@ function Scenario(app) {
     })
   }
 
-  this.editCurrency = (widgetIdx) => {
+  this.editCurrency = (widgetIdx, currency) => {
     const quoteWidget = this.widgets().at(widgetIdx)
     const currencySelector = quoteWidget.find('.fxp-currency__list')
     currencySelector.simulate('change', {
-      target: { value: 'USD' }
+      target: { value: currency }
     })
   }
 }
@@ -36,7 +36,7 @@ describe('<App />', () => {
     app = mount(<App />)
   })
 
-  it('reacts to amount being edited', () => {
+  it('reacts to the quote amount being edited', () => {
     return hereafter((expect, when) => {
       when(() => {
         const step = new Scenario(app)
@@ -48,12 +48,28 @@ describe('<App />', () => {
     })()
   })
 
-  it('reacts to the currency being edited', () => {
+  it('reacts to the quote currency being edited', () => {
     return hereafter((expect, when) => {
       when(() => {
         const step = new Scenario(app)
         step.editAmount(0,1)
         step.editCurrency(0,'USD')
+      })
+      expect(() =>
+        app.find('.fxp-currency').at(0).find('.fxp-currency__amount').props().value
+      ).toEqual(1)
+      expect(() =>
+        app.find('.fxp-currency').at(1).find('.fxp-currency__amount').props().value
+      ).toEqual(1)
+    })()
+  })
+
+  it('reacts to the counter currency being edited', () => {
+    return hereafter((expect, when) => {
+      when(() => {
+        const step = new Scenario(app)
+        step.editAmount(0,1)
+        step.editCurrency(1,'EUR')
       })
       expect(() =>
         app.find('.fxp-currency').at(0).find('.fxp-currency__amount').props().value

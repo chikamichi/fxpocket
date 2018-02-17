@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import Currency from './Currency'
-import { INITIAL_STATE, round } from './utils'
+import { INITIAL_STATE, convertAmount, convertAmounts } from './utils'
 import Fixer from './fixer'
 import './App.css'
 
@@ -12,43 +12,32 @@ class App extends Component {
   }
 
   onAmountEdited(payload) {
-    this.setState({base: payload})
+    let newBaseAmount
+    if (payload.uuid === 0)
+      newBaseAmount = payload.amount
+    else
+      newBaseAmount = this.convertAmount(payload.amount, this.state.widgets[payload.uuid], this.state.widgets[0])
+    this.setState({baseAmount: newBaseAmount})
   }
 
-  onCurrencyEdited(payload) {
+  onCurrencyEdited(payload, updateBaseAmount = true) {
     const idx = payload.uuid
     const newWidgetsState = [
       ...this.state.widgets.slice(0, idx),
       payload.currency,
       ...this.state.widgets.slice(idx+1)
     ]
-    const newBaseState = {
-      amount: payload.amount,
-      currency: payload.currency
-    }
     this.setState({
       widgets: newWidgetsState,
-      base: newBaseState
+      baseAmount: updateBaseAmount ? payload.amount : this.state.baseAmount
     })
-  }
-
-  convertAmounts() {
-    const base = this.state.base
-    if (!base.amount || !base.currency) return {}
-    return this.fixer.currencies.reduce((acc, currency) => {
-      let amount
-      if (base.currency === currency)
-        amount = base.amount
-      else
-        amount = base.amount * this.fixer.rates[base.currency][currency]
-      acc[currency] = round(amount, 2)
-      return acc
-    }, {})
   }
 
   componentDidMount() {
     Fixer.connect().then(fixer => {
       this.fixer = fixer
+      this.convertAmount = convertAmount(fixer)
+      this.convertAmounts = convertAmounts(fixer)
       this.setState({init: true})
     })
   }
@@ -60,7 +49,11 @@ class App extends Component {
       onAmountEdited: this.onAmountEdited.bind(this),
       onCurrencyEdited: this.onCurrencyEdited.bind(this)
     }
-    const amounts = this.convertAmounts()
+    const amounts = this.convertAmounts({
+      amount: this.state.baseAmount,
+      currency: this.state.widgets[0],
+      currencies: this.state.widgets
+    })
     const widgets = this.state.widgets.map((currency, i) => {
       return <Currency
         key={i} // key is simply the position in this.state.widgets
