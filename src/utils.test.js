@@ -7,11 +7,16 @@ import Fixer from './fixer'
 
 describe('Utilities', () => {
   describe('convertAmounts()', () => {
-    var fixer
+    var fixer, base
 
     beforeAll(async () => {
       await Fixer.connect().then(f => {
         fixer = f
+        base = {
+          amount: 2,
+          currency: 'EUR',
+          currencies: fixer.currencies
+        }
       })
     })
 
@@ -26,13 +31,11 @@ describe('Utilities', () => {
     })
 
     it('computes each widget\'s amount based on state.base insights', () => {
-      let base = {amount: 2, currency: 'EUR'}
       expect(Utils.convertAmounts(fixer, base)).toEqual({
         EUR: 2, // 2*1
         USD: 2.5 // 2*1.25
       })
-      base = {amount: 5, currency: 'USD'}
-      expect(Utils.convertAmounts(fixer, base)).toEqual({
+      expect(Utils.convertAmounts(fixer, {...base, amount: 5, currency: 'USD'})).toEqual({
         EUR: 4, // 5*0.8
         USD: 5 // 5*1
       })
@@ -41,8 +44,7 @@ describe('Utilities', () => {
     it('truncates floats to a precision of 2 decimals', () => {
       // Same precision fixer.io exposes its rates and people usually expect
       // amounts to be expressed as.
-      const base = {amount: 1.239, currency: 'EUR'}
-      expect(Utils.convertAmounts(fixer, base)).toEqual({
+      expect(Utils.convertAmounts(fixer, {...base, amount: 1.239})).toEqual({
         EUR: 1.24, // 1.239*1 truncated
         USD: 1.55 // 1.239*1.25 = 1.54875 truncated
       })
