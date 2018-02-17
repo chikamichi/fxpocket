@@ -161,8 +161,7 @@ describe('<Currency />', () => {
         })
         expect(spy).toHaveBeenCalledTimes(1)
         expect(spy).toHaveBeenLastCalledWith({
-          amount: 42,
-          currency: wrapper.instance().props.currency
+          amount: 42
         })
       })
     })

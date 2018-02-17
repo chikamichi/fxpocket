@@ -7,8 +7,7 @@ import { currencyWording } from './utils'
 class Currency extends React.Component {
   onAmountEdited(event) {
     this.props.onAmountEdited({
-      amount: event.target.value,
-      currency: this.props.currency
+      amount: event.target.value
     })
   }
 

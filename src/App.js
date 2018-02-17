@@ -12,23 +12,19 @@ class App extends Component {
   }
 
   onAmountEdited(payload) {
-    this.setState({base: payload})
+    this.setState({baseAmount: payload.amount})
   }
 
-  onCurrencyEdited(payload, updateBase = true) {
+  onCurrencyEdited(payload, updateBaseAmount = true) {
     const idx = payload.uuid
     const newWidgetsState = [
       ...this.state.widgets.slice(0, idx),
       payload.currency,
       ...this.state.widgets.slice(idx+1)
     ]
-    const newBaseState = updateBase ? {
-      amount: payload.amount,
-      currency: payload.currency
-    } : this.state.base
     this.setState({
       widgets: newWidgetsState,
-      base: newBaseState
+      baseAmount: updateBaseAmount ? payload.amount : this.state.baseAmount
     })
   }
 
@@ -48,7 +44,7 @@ class App extends Component {
       onCurrencyEdited: this.onCurrencyEdited.bind(this)
     }
     const amounts = this.convertAmounts({
-      amount: this.state.base.amount,
+      amount: this.state.baseAmount,
       currency: this.state.widgets[0],
       currencies: this.state.widgets
     })

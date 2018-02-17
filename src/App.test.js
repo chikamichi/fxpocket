@@ -54,37 +54,29 @@ describe('<App />', () => {
       })
     })
 
-    describe('.base', () => {
-      const initialState = {
-        amount: undefined,
-        currency: undefined
-      }
+    describe('.baseAmount', () => {
+      const initialState = undefined
 
       it('is initially empty', () => {
-        expect(wrapper).toHaveState('base', initialState)
+        expect(wrapper).toHaveState('baseAmount', initialState)
       })
 
       it('is updated upon onAmountEdited()', () => {
-        const newState = {
-          amount: 42,
-          currency: 'EUR'
+        const payload = {
+          amount: 42
         }
-        wrapper.instance().onAmountEdited(newState)
-        expect(wrapper).toHaveState('base', newState)
+        wrapper.instance().onAmountEdited(payload)
+        expect(wrapper).toHaveState('baseAmount', payload.amount)
       })
 
-      it('is updated upon onCurrencyEdited()', () => {
+      it.only('is updated upon onCurrencyEdited()', () => {
         const payload = {
           uuid: 0,
           amount: 42,
           currency: 'USD'
         }
-        const newState = {
-          amount: 42,
-          currency: 'USD'
-        }
         wrapper.instance().onCurrencyEdited(payload)
-        expect(wrapper).toHaveState('base', newState)
+        expect(wrapper).toHaveState('baseAmount', payload.amount)
       })
     })
   })
