@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import Currency from './Currency'
-import { INITIAL_STATE, round } from './utils'
+import { INITIAL_STATE, convertAmounts } from './utils'
 import Fixer from './fixer'
 import './App.css'
 
@@ -32,23 +32,10 @@ class App extends Component {
     })
   }
 
-  convertAmounts() {
-    const base = this.state.base
-    if (!base.amount || !base.currency) return {}
-    return this.fixer.currencies.reduce((acc, currency) => {
-      let amount
-      if (base.currency === currency)
-        amount = base.amount
-      else
-        amount = base.amount * this.fixer.rates[base.currency][currency]
-      acc[currency] = round(amount, 2)
-      return acc
-    }, {})
-  }
-
   componentDidMount() {
     Fixer.connect().then(fixer => {
       this.fixer = fixer
+      this.convertAmounts = convertAmounts(fixer)
       this.setState({init: true})
     })
   }
@@ -60,7 +47,7 @@ class App extends Component {
       onAmountEdited: this.onAmountEdited.bind(this),
       onCurrencyEdited: this.onCurrencyEdited.bind(this)
     }
-    const amounts = this.convertAmounts()
+    const amounts = this.convertAmounts(this.state.base)
     const widgets = this.state.widgets.map((currency, i) => {
       return <Currency
         key={i} // key is simply the position in this.state.widgets

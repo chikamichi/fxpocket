@@ -17,42 +17,6 @@ describe('<App />', () => {
     })
   })
 
-  describe('Currency#convertAmounts()', () => {
-    var wrapper
-
-    beforeEach(async () => {
-      wrapper = await shallow(<App />)
-      wrapper.update()
-    })
-
-    it('returns a null object when state.base is not set', () => {
-      expect(wrapper.instance().convertAmounts()).toEqual({})
-    })
-
-    it('computes each widget\'s amount based on state.base insights', () => {
-      wrapper.setState({base: {amount: 2, currency: 'EUR'}})
-      expect(wrapper.instance().convertAmounts()).toEqual({
-        EUR: 2, // 2*1
-        USD: 2.5 // 2*1.25
-      })
-      wrapper.setState({base: {amount: 5, currency: 'USD'}})
-      expect(wrapper.instance().convertAmounts()).toEqual({
-        EUR: 4, // 5*0.8
-        USD: 5 // 5*1
-      })
-    })
-
-    it('truncates float to a precision of 2 decimals', () => {
-      // Same precision fixer.io exposes its rates and people usually expect
-      // amounts to be expressed as.
-      wrapper.setState({base: {amount: 1.239, currency: 'EUR'}})
-      expect(wrapper.instance().convertAmounts()).toEqual({
-        EUR: 1.24, // 1.239*1 truncated
-        USD: 1.55 // 1.239*1.25 = 1.54875 truncated
-      })
-    })
-  })
-
   describe('state', () => {
     var wrapper
 
