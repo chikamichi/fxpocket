@@ -8,7 +8,6 @@ describe('<Currency />', () => {
   const dummyProps = {
     key: 0,
     uuid: 0,
-    type: 'quote',
     currency: 'EUR',
     currencies: ['EUR', 'USD'],
     amount: 42,
@@ -33,14 +32,6 @@ describe('<Currency />', () => {
     // hard to test against. Using the check-prop-types library will work around
     // that issue, until React provides a native way to toggle error throwing in
     // tests.
-
-    it('requires a "type" string prop', () => {
-      const {type, ...props} = dummyProps
-      expect(() => {
-          assertPropTypes(Currency.propTypes, props, 'prop', Currency.type)
-        }
-      ).toThrowError(/prop `type` is marked as required/)
-    })
 
     it('requires a "currency" string prop', () => {
       const {currency, ...props} = dummyProps
@@ -72,26 +63,6 @@ describe('<Currency />', () => {
           assertPropTypes(Currency.propTypes, props, 'prop', Currency.onCurrencyEdited)
         }
       ).toThrowError(/prop `onCurrencyEdited` is marked as required/)
-    })
-
-    it('allows for a "type" string prop with value "quote"', () => {
-      const props = {...dummyProps, type: 'quote'}
-      const wrapper = shallow(<Currency {...props} />)
-      expect(wrapper.instance().props.type).toEqual('quote')
-    })
-
-    it('allows for a "type" string prop with value "counter"', () => {
-      const props = {...dummyProps, type: 'counter'}
-      const wrapper = shallow(<Currency {...props} />)
-      expect(wrapper.instance().props.type).toEqual('counter')
-    })
-
-    it('rejects invalid "type" prop values', () => {
-      const props = {...dummyProps, type: 'foobar'}
-      expect(() => {
-          assertPropTypes(Currency.propTypes, props, 'prop', Currency.type)
-        }
-      ).toThrowError(/expected one of \["quote","counter"\]/)
     })
   })
 
