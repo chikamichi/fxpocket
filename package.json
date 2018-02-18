@@ -1,5 +1,10 @@
 {
   "name": "fxpocket",
+  "title": "fxPocket",
+  "description": "A lightweight, in-browser currency converter.",
+  "repository": "https://github.com/chikamichi/fxpocket",
+  "site": "https://fxpocket.netlify.com/",
+  "author": "Jean-Denis Vauguet <jd@vauguet.fr>",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -22,6 +27,7 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "esdoc": "^1.0.4",
+    "esdoc-brand-plugin": "^1.0.0",
     "esdoc-ecmascript-proposal-plugin": "^1.0.0",
     "esdoc-jsx-plugin": "^1.0.0",
     "esdoc-standard-plugin": "^1.0.0",
