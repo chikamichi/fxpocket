@@ -29,6 +29,7 @@
     "esdoc": "^1.0.4",
     "esdoc-brand-plugin": "^1.0.0",
     "esdoc-ecmascript-proposal-plugin": "^1.0.0",
+    "esdoc-importpath-plugin": "^1.0.1",
     "esdoc-jsx-plugin": "^1.0.0",
     "esdoc-standard-plugin": "^1.0.0",
     "hereafter": "^1.0.4",
