@@ -1,68 +1,68 @@
 window.esdocSearchIndex = [
   [
-    "fxpocket/src/utils.js~app_motto",
+    "./utils.js~app_motto",
     "variable/index.html#static-variable-APP_MOTTO",
-    "<span>APP_MOTTO</span> <span class=\"search-result-import-path\">fxpocket/src/utils.js</span>",
+    "<span>APP_MOTTO</span> <span class=\"search-result-import-path\">./utils.js</span>",
     "variable"
   ],
   [
-    "fxpocket/src/utils.js~app_title",
+    "./utils.js~app_title",
     "variable/index.html#static-variable-APP_TITLE",
-    "<span>APP_TITLE</span> <span class=\"search-result-import-path\">fxpocket/src/utils.js</span>",
+    "<span>APP_TITLE</span> <span class=\"search-result-import-path\">./utils.js</span>",
     "variable"
   ],
   [
-    "fxpocket/src/app.js~app",
+    "./app.js~app",
     "class/src/App.js~App.html",
-    "<span>App</span> <span class=\"search-result-import-path\">fxpocket/src/App.js</span>",
+    "<span>App</span> <span class=\"search-result-import-path\">./App.js</span>",
     "class"
   ],
   [
-    "fxpocket/src/currency.js~currency",
+    "./currency.js~currency",
     "class/src/Currency.js~Currency.html",
-    "<span>Currency</span> <span class=\"search-result-import-path\">fxpocket/src/Currency.js</span>",
+    "<span>Currency</span> <span class=\"search-result-import-path\">./Currency.js</span>",
     "class"
   ],
   [
-    "fxpocket/src/fixer.js~fixer",
+    "./fixer.js~fixer",
     "class/src/fixer.js~Fixer.html",
-    "<span>Fixer</span> <span class=\"search-result-import-path\">fxpocket/src/fixer.js</span>",
+    "<span>Fixer</span> <span class=\"search-result-import-path\">./fixer.js</span>",
     "class"
   ],
   [
-    "fxpocket/src/utils.js~initial_state",
+    "./utils.js~initial_state",
     "variable/index.html#static-variable-INITIAL_STATE",
-    "<span>INITIAL_STATE</span> <span class=\"search-result-import-path\">fxpocket/src/utils.js</span>",
+    "<span>INITIAL_STATE</span> <span class=\"search-result-import-path\">./utils.js</span>",
     "variable"
   ],
   [
-    "fxpocket/src/staticui.js~staticui",
+    "./staticui.js~staticui",
     "function/index.html#static-function-StaticUI",
-    "<span>StaticUI</span> <span class=\"search-result-import-path\">fxpocket/src/StaticUI.js</span>",
+    "<span>StaticUI</span> <span class=\"search-result-import-path\">./StaticUI.js</span>",
     "function"
   ],
   [
-    "fxpocket/src/utils.js~convertamount",
+    "./utils.js~convertamount",
     "function/index.html#static-function-convertAmount",
-    "<span>convertAmount</span> <span class=\"search-result-import-path\">fxpocket/src/utils.js</span>",
+    "<span>convertAmount</span> <span class=\"search-result-import-path\">./utils.js</span>",
     "function"
   ],
   [
-    "fxpocket/src/utils.js~convertamounts",
+    "./utils.js~convertamounts",
     "function/index.html#static-function-convertAmounts",
-    "<span>convertAmounts</span> <span class=\"search-result-import-path\">fxpocket/src/utils.js</span>",
+    "<span>convertAmounts</span> <span class=\"search-result-import-path\">./utils.js</span>",
     "function"
   ],
   [
-    "fxpocket/src/utils.js~currencywording",
+    "./utils.js~currencywording",
     "function/index.html#static-function-currencyWording",
-    "<span>currencyWording</span> <span class=\"search-result-import-path\">fxpocket/src/utils.js</span>",
+    "<span>currencyWording</span> <span class=\"search-result-import-path\">./utils.js</span>",
     "function"
   ],
   [
-    "fxpocket/src/utils.js~round",
+    "./utils.js~round",
     "function/index.html#static-function-round",
-    "<span>round</span> <span class=\"search-result-import-path\">fxpocket/src/utils.js</span>",
+    "<span>round</span> <span class=\"search-result-import-path\">./utils.js</span>",
     "function"
   ],
   [

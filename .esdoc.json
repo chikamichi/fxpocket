@@ -11,6 +11,22 @@
   "plugins": [
     {"name": "esdoc-standard-plugin"},
     {"name": "esdoc-jsx-plugin"},
-    {"name": "esdoc-ecmascript-proposal-plugin", "option": {"all": true}}
+    {"name": "esdoc-ecmascript-proposal-plugin", "option": {"all": true}},
+    {
+      "name": "esdoc-importpath-plugin",
+      "option": {
+        "stripPackageName": true,
+        "replaces": [
+          {"from": "^src/", "to": "./"}
+        ]
+      }
+    },
+    {
+      "name": "esdoc-brand-plugin",
+      "option": {
+        "logo": "./docs/image/oclock-logo.png",
+        "image": "./docs/image/oclock-logo.png"
+      }
+    }
   ]
 }
