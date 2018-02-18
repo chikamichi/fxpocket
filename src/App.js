@@ -58,7 +58,6 @@ class App extends Component {
       return <Currency
         key={i} // key is simply the position in this.state.widgets
         uuid={i}
-        type='quote' // TODO: remove this type prop
         amount={amounts[currency]}
         currency={currency}
         currencies={currencies}

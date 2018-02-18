@@ -51,7 +51,6 @@ class Currency extends React.Component {
 }
 
 Currency.propTypes = {
-  type: PropTypes.oneOf(['quote', 'counter']).isRequired,
   currency: PropTypes.string.isRequired,
   currencies: PropTypes.array.isRequired,
   onAmountEdited: PropTypes.func.isRequired,
