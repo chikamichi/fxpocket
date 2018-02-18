@@ -1,7 +1,7 @@
 {
-  "coverage": "93.1%",
+  "coverage": "96.55%",
   "expectCount": 29,
-  "actualCount": 27,
+  "actualCount": 28,
   "files": {
     "src/App.js": {
       "expectCount": 10,
@@ -15,10 +15,8 @@
     },
     "src/StaticUI.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        8
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/fixer.js": {
       "expectCount": 7,

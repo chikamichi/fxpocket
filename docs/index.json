@@ -929,7 +929,7 @@
     "__docId__": 64,
     "kind": "file",
     "name": "src/StaticUI.js",
-    "content": "import React, { Component } from 'react'\n\nimport { APP_TITLE, APP_MOTTO } from './utils'\n\n/*\n * StaticUI — A presentational wrapper to prettify the core app.\n */\nexport default (WrappedComponent) => {\n  return class StaticUI extends Component {\n    render() {\n      return (\n        <div className=\"fxp\">\n          <header>\n            <h1 className=\"fxp-title\">{APP_TITLE}</h1>\n            <h2 className=\"fxp-motto\">{APP_MOTTO}</h2>\n          </header>\n          <WrappedComponent {...this.props} />\n          <footer>\n            <ul className='fxp-u-list  fxp-footer-links'>\n              <li className='fxp-u-list__item'>\n                <a\n                  className='fxp-footer-link'\n                  href='https://github.com/chikamichi/fxpocket/'\n                >source</a>\n              </li>\n              <li className='fxp-u-list__item'>\n                <a\n                  className='fxp-footer-link'\n                  href='https://en.wikipedia.org/wiki/Exchange_rate'\n                >about exchange rates</a>\n              </li>\n            </ul>\n          </footer>\n        </div>\n      )\n    }\n  }\n}\n",
+    "content": "import React, { Component } from 'react'\n\nimport { APP_TITLE, APP_MOTTO } from './utils'\n\n/**\n * **StaticUI — A presentational wrapper to prettify the core app.**\n *\n * @type {function}\n * @param {React.Component} WrappedComponent - Expected to be {@link App}\n * @return {React.Component}\n */\nexport default (WrappedComponent) => {\n  return class StaticUI extends Component {\n    render() {\n      return (\n        <div className=\"fxp\">\n          <header>\n            <h1 className=\"fxp-title\">{APP_TITLE}</h1>\n            <h2 className=\"fxp-motto\">{APP_MOTTO}</h2>\n          </header>\n          <WrappedComponent {...this.props} />\n          <footer>\n            <ul className='fxp-u-list  fxp-footer-links'>\n              <li className='fxp-u-list__item'>\n                <a\n                  className='fxp-footer-link'\n                  href='https://github.com/chikamichi/fxpocket/'\n                >source</a>\n              </li>\n              <li className='fxp-u-list__item'>\n                <a\n                  className='fxp-footer-link'\n                  href='https://en.wikipedia.org/wiki/Exchange_rate'\n                >about exchange rates</a>\n              </li>\n            </ul>\n          </footer>\n        </div>\n      )\n    }\n  }\n}\n",
     "static": true,
     "longname": "/home/jd/Documents/work/oclock/recrutement/test-technique/fxpocket/src/StaticUI.js",
     "access": "public",
@@ -949,21 +949,35 @@
     "export": true,
     "importPath": "fxpocket/src/StaticUI.js",
     "importStyle": "StaticUI",
-    "description": null,
-    "lineNumber": 8,
-    "undocument": true,
+    "description": "**StaticUI — A presentational wrapper to prettify the core app.**",
+    "lineNumber": 12,
     "params": [
       {
-        "name": "WrappedComponent",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "React.Component"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "WrappedComponent",
+        "description": "Expected to be {@link App}"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "React.Component"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "function"
+      ],
+      "spread": false,
+      "description": null
     }
   },
   {
@@ -1446,7 +1460,7 @@
   },
   {
     "kind": "index",
-    "content": "fxPocket\n========\n\n**A simple currency converter.**\n\n## TL;DR:\n\nInstall required dependencies with:\n\n```sh\n# Install Node.js first (https://nodejs.org/en/)\nnpm install\n```\n\nStart the web server with:\n\n```sh\nnpm start\n```\n\nThen go check http://localhost:3000/.\n\n## Specs & Tests\n\n* High-level specs are available in [docs/features](./docs/features).\n* Unit and functional tests may be run with `npm run test`.\n\n## A Student's Noteworthy Features\n\n* [Pull Request #2](https://github.com/chikamichi/fxpocket/pull/2) demonstrates *Test-Driven Development* (TDD) in a step-by-step fashion.\n* [Pull Request #9](https://github.com/chikamichi/fxpocket/pull/9) demonstrates a simple API-aware component's lifecycle, with underlying limitations.\n* [Pull Request #11](https://github.com/chikamichi/fxpocket/pull/12) demonstrates the \"Lifting State Up\" pattern.\n* [Pull Request #15](https://github.com/chikamichi/fxpocket/pull/15) demonstrates a more complex PR, including review and incrementally fixing code chunks based on peer-feedback.\n* [Pull Request #21](https://github.com/chikamichi/fxpocket/pull/21) demonstrates TDD bug-fixing on a grown-up project.\n* [Pull Request #23](https://github.com/chikamichi/fxpocket/pull/23) demonstrates separating concerns between fetching and rendering data, as well as mocking external dependencies & requests in tests.\n\n## Quality of Life\n\nThis project was bootstrapped with [*Create React App*](https://github.com/facebookincubator/create-react-app) the following way:\n\n```sh\nnpm install -g npx # https://github.com/zkat/npx\nnpx create-react-app fxpocket # https://github.com/facebook/create-react-app\n```\n\n*Create React App* does all the heavy-lifting. More information about *Create React App* is available [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).\n\nSuggested Atom plugins for this project:\n\n- https://atom.io/packages/file-icons\n- https://atom.io/packages/atom-beautify\n- https://atom.io/packages/language-gherkin\n- https://atom.io/packages/atom-ide-ui\n- https://atom.io/packages/ide-css\n- https://atom.io/packages/ide-html\n- https://atom.io/packages/ide-standardjs\n- https://atom.io/packages/linter-ui-default\n- https://atom.io/packages/linter-eslint (depends on https://eslint.org/)\n- https://atom.io/packages/esdoc\n",
+    "content": "fxPocket\n========\n\n**A simple currency converter**, live at https://fxpocket.netlify.com/.\n\n## TL;DR:\n\nInstall required dependencies with:\n\n```sh\n# Install Node.js first (https://nodejs.org/en/)\nnpm install\n```\n\nStart the web server with:\n\n```sh\nnpm start\n```\n\nThen go check http://localhost:3000/.\n\nDocumentation is available at https://fxpocket-docs.netlify.com/.\n\n## Specs & Tests\n\n* High-level specs are available in [docs/features](./docs/features).\n* Unit and integration tests may be run with `npm run test`.\n\n## A Student's Noteworthy Features\n\n* [Pull Request #2](https://github.com/chikamichi/fxpocket/pull/2) demonstrates *Test-Driven Development* (TDD), in a newcomers-friendly, step-by-step fashion.\n* [Pull Request #9](https://github.com/chikamichi/fxpocket/pull/9) demonstrates implementing an API-aware component's lifecycle, showcasing underlying limitations at the same time.\n* [Pull Request #11](https://github.com/chikamichi/fxpocket/pull/12) demonstrates the \"Lifting State Up\" pattern.\n* [Pull Request #15](https://github.com/chikamichi/fxpocket/pull/15) demonstrates dealing with a more complex PR, including review and incrementally fixing code chunks based on peer-feedback.\n* [Pull Request #21](https://github.com/chikamichi/fxpocket/pull/21) demonstrates TDD bug-fixing within a grown-up project.\n* [Pull Request #23](https://github.com/chikamichi/fxpocket/pull/23) demonstrates separating concerns between fetching and rendering data, as well as mocking external dependencies & requests in tests.\n* [Pull Request #36](https://github.com/chikamichi/fxpocket/pull/36) demonstrates documenting a code-base.\n\n## Quality of Life\n\nThis project was bootstrapped with [*Create React App*](https://github.com/facebookincubator/create-react-app) the following way:\n\n```sh\nnpm install -g npx # https://github.com/zkat/npx\nnpx create-react-app fxpocket # https://github.com/facebook/create-react-app\n```\n\n*Create React App* does all the heavy-lifting. More information about *Create React App* is available [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).\n\nSuggested Atom plugins for this project:\n\n- https://atom.io/packages/file-icons\n- https://atom.io/packages/atom-beautify\n- https://atom.io/packages/language-gherkin\n- https://atom.io/packages/atom-ide-ui\n- https://atom.io/packages/ide-css\n- https://atom.io/packages/ide-html\n- https://atom.io/packages/ide-standardjs\n- https://atom.io/packages/linter-ui-default\n- https://atom.io/packages/linter-eslint (depends on https://eslint.org/)\n- https://atom.io/packages/esdoc\n",
     "longname": "/home/jd/Documents/work/oclock/recrutement/test-technique/fxpocket/README.md",
     "name": "./README.md",
     "static": true,

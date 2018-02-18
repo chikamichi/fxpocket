@@ -2,8 +2,12 @@ import React, { Component } from 'react'
 
 import { APP_TITLE, APP_MOTTO } from './utils'
 
-/*
- * StaticUI — A presentational wrapper to prettify the core app.
+/**
+ * **StaticUI — A presentational wrapper to prettify the core app.**
+ *
+ * @type {function}
+ * @param {React.Component} WrappedComponent - Expected to be {@link App}
+ * @return {React.Component}
  */
 export default (WrappedComponent) => {
   return class StaticUI extends Component {
