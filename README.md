@@ -1,7 +1,7 @@
 fxPocket
 ========
 
-**A simple currency converter.**
+**A simple currency converter**, live at https://fxpocket.netlify.com/.
 
 ## TL;DR:
 
@@ -23,16 +23,17 @@ Then go check http://localhost:3000/.
 ## Specs & Tests
 
 * High-level specs are available in [docs/features](./docs/features).
-* Unit and functional tests may be run with `npm run test`.
+* Unit and integration tests may be run with `npm run test`.
 
 ## A Student's Noteworthy Features
 
-* [Pull Request #2](https://github.com/chikamichi/fxpocket/pull/2) demonstrates *Test-Driven Development* (TDD) in a step-by-step fashion.
-* [Pull Request #9](https://github.com/chikamichi/fxpocket/pull/9) demonstrates a simple API-aware component's lifecycle, with underlying limitations.
+* [Pull Request #2](https://github.com/chikamichi/fxpocket/pull/2) demonstrates *Test-Driven Development* (TDD), in a newcomers-friendly, step-by-step fashion.
+* [Pull Request #9](https://github.com/chikamichi/fxpocket/pull/9) demonstrates implementing an API-aware component's lifecycle, showcasing underlying limitations at the same time.
 * [Pull Request #11](https://github.com/chikamichi/fxpocket/pull/12) demonstrates the "Lifting State Up" pattern.
-* [Pull Request #15](https://github.com/chikamichi/fxpocket/pull/15) demonstrates a more complex PR, including review and incrementally fixing code chunks based on peer-feedback.
-* [Pull Request #21](https://github.com/chikamichi/fxpocket/pull/21) demonstrates TDD bug-fixing on a grown-up project.
+* [Pull Request #15](https://github.com/chikamichi/fxpocket/pull/15) demonstrates dealing with a more complex PR, including review and incrementally fixing code chunks based on peer-feedback.
+* [Pull Request #21](https://github.com/chikamichi/fxpocket/pull/21) demonstrates TDD bug-fixing within a grown-up project.
 * [Pull Request #23](https://github.com/chikamichi/fxpocket/pull/23) demonstrates separating concerns between fetching and rendering data, as well as mocking external dependencies & requests in tests.
+* [Pull Request #36](https://github.com/chikamichi/fxpocket/pull/36) demonstrates documenting a code-base.
 
 ## Quality of Life
 
