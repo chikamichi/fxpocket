@@ -1,0 +1,1463 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/App.js",
+    "content": "import React, { Component } from 'react'\n\nimport Currency from './Currency'\nimport { INITIAL_STATE, convertAmount, convertAmounts } from './utils'\nimport Fixer from './fixer'\nimport './App.css'\n\n/**\n * **App — a container component for the currency converter.**\n *\n * Responsible for converting between base and quote currencies, and displaying\n * so-called \"currency widgets\". The first currency widget in the list defines\n * what the base currency is, subsequent widgets map to quote currencies.\n * @see https://www.investopedia.com/terms/b/basecurrency.asp\n */\nclass App extends Component {\n  /** @ignore */\n  constructor(props) {\n    super(props)\n    /** @type {Object} */\n    this.state = INITIAL_STATE\n  }\n\n  /**\n   * User edited a currency widget's amount.\n   *\n   * Side-effect depends on whether we're dealing with the base currency or not:\n   * - base widget edited => replace `state.baseAmount` with raw new value\n   * - quote widget edited => replace `state.baseAmount` with converted value\n   *\n   * @param {Object} payload\n   * @param {number} payload.uuid - widget's UUID\n   * @param {number} payload.amount - widget's new amount\n   */\n  onAmountEdited(payload) {\n    let newBaseAmount\n    if (payload.uuid === 0)\n      newBaseAmount = payload.amount\n    else\n      newBaseAmount = this.convertAmount(payload.amount, this.state.widgets[payload.uuid], this.state.widgets[0])\n    this.setState({baseAmount: newBaseAmount})\n  }\n\n  /**\n   * User edited a currency widget's currency.\n   *\n   * @param {Object} payload\n   * @param {number} payload.uuid - widget's UUID\n   * @param {string} payload.currency - widget's new currency\n   */\n  onCurrencyEdited(payload) {\n    const idx = payload.uuid\n    const newWidgetsState = [\n      ...this.state.widgets.slice(0, idx),\n      payload.currency,\n      ...this.state.widgets.slice(idx+1)\n    ]\n    this.setState({\n      widgets: newWidgetsState\n    })\n  }\n\n  /**\n   * Upon the App being mounted:\n   * - fetch supported currencies as well as conversion rates;\n   * - bind conversion utilities to fetched data;\n   * - eventually mark the component as ready.\n   */\n  componentDidMount() {\n    Fixer.connect().then(fixer => {\n      /** @type {Fixer} */\n      this.fixer = fixer\n      /**\n       * `state.fixer`-curried {@link src/utils.js~convertAmount} utility.\n       * @type {function}\n       */\n      this.convertAmount = convertAmount(fixer)\n      /**\n       * `state.fixer`-curried {@link src/utils.js~convertAmounts} utility.\n       * @type {function}\n       */\n      this.convertAmounts = convertAmounts(fixer)\n      this.setState({init: true})\n    })\n  }\n\n  /**\n   * Renders the core application as a list of currency widgets.\n   *\n   * @return {ReactElement}\n   */\n  render() {\n    if (!this.state.init) return <div className='fxp-loading'></div>\n    const currencies = this.fixer.currencies\n    const cb = {\n      onAmountEdited: this.onAmountEdited.bind(this),\n      onCurrencyEdited: this.onCurrencyEdited.bind(this)\n    }\n    const amounts = this.convertAmounts({\n      amount: this.state.baseAmount,\n      currency: this.state.widgets[0],\n      currencies: this.state.widgets\n    })\n    const widgets = this.state.widgets.map((currency, i) => {\n      return <Currency\n        key={i} // key is simply the position in this.state.widgets\n        uuid={i}\n        amount={amounts[currency]}\n        currency={currency}\n        currencies={currencies}\n        onAmountEdited={cb.onAmountEdited}\n        onCurrencyEdited={cb.onCurrencyEdited} />\n    })\n    return (\n      <div className=\"fxp-app\">\n        {widgets}\n      </div>\n    )\n  }\n}\n\nexport default App\n",
+    "static": true,
+    "longname": "/home/jd/Documents/work/oclock/recrutement/test-technique/fxpocket/src/App.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "class",
+    "name": "App",
+    "memberof": "src/App.js",
+    "static": true,
+    "longname": "src/App.js~App",
+    "access": "public",
+    "export": true,
+    "importPath": "fxpocket/src/App.js",
+    "importStyle": "App",
+    "description": "**App — a container component for the currency converter.**\n\nResponsible for converting between base and quote currencies, and displaying\nso-called \"currency widgets\". The first currency widget in the list defines\nwhat the base currency is, subsequent widgets map to quote currencies.",
+    "see": [
+      "https://www.investopedia.com/terms/b/basecurrency.asp"
+    ],
+    "lineNumber": 16,
+    "interface": false,
+    "extends": [
+      "react~Component"
+    ]
+  },
+  {
+    "__docId__": 50,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/App.js~App",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/App.js~App#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 18,
+    "ignore": true
+  },
+  {
+    "__docId__": 51,
+    "kind": "member",
+    "name": "state",
+    "memberof": "src/App.js~App",
+    "static": false,
+    "longname": "src/App.js~App#state",
+    "access": "public",
+    "description": null,
+    "lineNumber": 21,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 52,
+    "kind": "method",
+    "name": "onAmountEdited",
+    "memberof": "src/App.js~App",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/App.js~App#onAmountEdited",
+    "access": "public",
+    "description": "User edited a currency widget's amount.\n\nSide-effect depends on whether we're dealing with the base currency or not:\n- base widget edited => replace `state.baseAmount` with raw new value\n- quote widget edited => replace `state.baseAmount` with converted value",
+    "lineNumber": 35,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "payload",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "payload.uuid",
+        "description": "widget's UUID"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "payload.amount",
+        "description": "widget's new amount"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 53,
+    "kind": "method",
+    "name": "onCurrencyEdited",
+    "memberof": "src/App.js~App",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/App.js~App#onCurrencyEdited",
+    "access": "public",
+    "description": "User edited a currency widget's currency.",
+    "lineNumber": 51,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "payload",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "payload.uuid",
+        "description": "widget's UUID"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "payload.currency",
+        "description": "widget's new currency"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 54,
+    "kind": "method",
+    "name": "componentDidMount",
+    "memberof": "src/App.js~App",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/App.js~App#componentDidMount",
+    "access": "public",
+    "description": "Upon the App being mounted:\n- fetch supported currencies as well as conversion rates;\n- bind conversion utilities to fetched data;\n- eventually mark the component as ready.",
+    "lineNumber": 69,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 55,
+    "kind": "member",
+    "name": "fixer",
+    "memberof": "src/App.js~App",
+    "static": false,
+    "longname": "src/App.js~App#fixer",
+    "access": "public",
+    "description": null,
+    "lineNumber": 72,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Fixer"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "member",
+    "name": "convertAmount",
+    "memberof": "src/App.js~App",
+    "static": false,
+    "longname": "src/App.js~App#convertAmount",
+    "access": "public",
+    "description": "`state.fixer`-curried {@link src/utils.js~convertAmount} utility.",
+    "lineNumber": 77,
+    "type": {
+      "nullable": null,
+      "types": [
+        "function"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 57,
+    "kind": "member",
+    "name": "convertAmounts",
+    "memberof": "src/App.js~App",
+    "static": false,
+    "longname": "src/App.js~App#convertAmounts",
+    "access": "public",
+    "description": "`state.fixer`-curried {@link src/utils.js~convertAmounts} utility.",
+    "lineNumber": 82,
+    "type": {
+      "nullable": null,
+      "types": [
+        "function"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 58,
+    "kind": "method",
+    "name": "render",
+    "memberof": "src/App.js~App",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/App.js~App#render",
+    "access": "public",
+    "description": "Renders the core application as a list of currency widgets.",
+    "lineNumber": 92,
+    "return": {
+      "nullable": null,
+      "types": [
+        "ReactElement"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 59,
+    "kind": "file",
+    "name": "src/Currency.js",
+    "content": "import React from 'react'\nimport PropTypes from 'prop-types'\nimport coinify from 'coinify'\n\nimport { currencyWording } from './utils'\n\n/**\n * **Currency — a presentational component mapped to a specific currency & amount.**\n *\n * A <Currency /> instance is refered to as a \"currency widget\".\n */\nclass Currency extends React.Component {\n  /**\n   * User edited the widget's amount.\n   *\n   * Delegates to the matching callback provided as `props.onAmountEdited`.\n   *\n   * @see {@link App#onAmountEdited}\n   * @see https://reactjs.org/docs/events.html\n   *\n   * @param {SyntheticEvent} event - \"change\" event\n   */\n  onAmountEdited(event) {\n    this.props.onAmountEdited({\n      uuid: this.props.uuid,\n      amount: event.target.value\n    })\n  }\n\n  /**\n   * User edited the widget's currency.\n   *\n   * Delegates to the matching callback provided as `props.onCurrencyEdited`.\n   *\n   * @see {@link App#onCurrencyEdited}\n   * @see https://reactjs.org/docs/events.html\n   *\n   * @param {SyntheticEvent} event - \"change\" event\n   */\n  onCurrencyEdited(event) {\n    this.props.onCurrencyEdited({\n      uuid: this.props.uuid,\n      amount: this.props.amount,\n      currency: event.target.value\n    })\n  }\n\n  /**\n   * Renders the currency widget.\n   *\n   * @return {ReactElement}\n   */\n  render() {\n    const currencies = this.props.currencies.map((currency) =>\n      <option\n        key={currency}\n        className='fxp-currency__list-item'\n        value={currency}>\n          {currencyWording(currency)}\n      </option>\n    )\n    const currencySymbol = coinify.symbol(this.props.currency)\n    return (\n      <div className='fxp-currency'>\n        <div className='fxp-currency__result'>\n          <input\n            type='text'\n            className='fxp-currency__amount'\n            onChange={this.onAmountEdited.bind(this)}\n            value={this.props.amount || ''}\n            // ref={input => input && this.props.uuid === 0 && input.focus()}\n          />\n          <span className='fxp-currency__label'>{currencySymbol}</span>\n        </div>\n        <select value={this.props.currency} className='fxp-currency__list' onChange={this.onCurrencyEdited.bind(this)}>\n        {currencies}\n        </select>\n      </div>\n    )\n  }\n}\n\nCurrency.propTypes = {\n  /** @type {string} */\n  currency: PropTypes.string.isRequired,\n  /** @type {Array} */\n  currencies: PropTypes.array.isRequired,\n  /** @type {function} */\n  onAmountEdited: PropTypes.func.isRequired,\n  /** @type {function} */\n  onCurrencyEdited: PropTypes.func.isRequired\n}\n\nexport default Currency\n",
+    "static": true,
+    "longname": "/home/jd/Documents/work/oclock/recrutement/test-technique/fxpocket/src/Currency.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 60,
+    "kind": "class",
+    "name": "Currency",
+    "memberof": "src/Currency.js",
+    "static": true,
+    "longname": "src/Currency.js~Currency",
+    "access": "public",
+    "export": true,
+    "importPath": "fxpocket/src/Currency.js",
+    "importStyle": "Currency",
+    "description": "**Currency — a presentational component mapped to a specific currency & amount.**\n\nA <Currency /> instance is refered to as a \"currency widget\".",
+    "lineNumber": 12,
+    "interface": false,
+    "extends": [
+      "react~React.Component"
+    ]
+  },
+  {
+    "__docId__": 61,
+    "kind": "method",
+    "name": "onAmountEdited",
+    "memberof": "src/Currency.js~Currency",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Currency.js~Currency#onAmountEdited",
+    "access": "public",
+    "description": "User edited the widget's amount.\n\nDelegates to the matching callback provided as `props.onAmountEdited`.",
+    "see": [
+      "{@link App#onAmountEdited}",
+      "https://reactjs.org/docs/events.html"
+    ],
+    "lineNumber": 23,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "SyntheticEvent"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "event",
+        "description": "\"change\" event"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 62,
+    "kind": "method",
+    "name": "onCurrencyEdited",
+    "memberof": "src/Currency.js~Currency",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Currency.js~Currency#onCurrencyEdited",
+    "access": "public",
+    "description": "User edited the widget's currency.\n\nDelegates to the matching callback provided as `props.onCurrencyEdited`.",
+    "see": [
+      "{@link App#onCurrencyEdited}",
+      "https://reactjs.org/docs/events.html"
+    ],
+    "lineNumber": 40,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "SyntheticEvent"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "event",
+        "description": "\"change\" event"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 63,
+    "kind": "method",
+    "name": "render",
+    "memberof": "src/Currency.js~Currency",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Currency.js~Currency#render",
+    "access": "public",
+    "description": "Renders the currency widget.",
+    "lineNumber": 53,
+    "return": {
+      "nullable": null,
+      "types": [
+        "ReactElement"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 64,
+    "kind": "file",
+    "name": "src/StaticUI.js",
+    "content": "import React, { Component } from 'react'\n\nimport { APP_TITLE, APP_MOTTO } from './utils'\n\n/*\n * StaticUI — A presentational wrapper to prettify the core app.\n */\nexport default (WrappedComponent) => {\n  return class StaticUI extends Component {\n    render() {\n      return (\n        <div className=\"fxp\">\n          <header>\n            <h1 className=\"fxp-title\">{APP_TITLE}</h1>\n            <h2 className=\"fxp-motto\">{APP_MOTTO}</h2>\n          </header>\n          <WrappedComponent {...this.props} />\n          <footer>\n            <ul className='fxp-u-list  fxp-footer-links'>\n              <li className='fxp-u-list__item'>\n                <a\n                  className='fxp-footer-link'\n                  href='https://github.com/chikamichi/fxpocket/'\n                >source</a>\n              </li>\n              <li className='fxp-u-list__item'>\n                <a\n                  className='fxp-footer-link'\n                  href='https://en.wikipedia.org/wiki/Exchange_rate'\n                >about exchange rates</a>\n              </li>\n            </ul>\n          </footer>\n        </div>\n      )\n    }\n  }\n}\n",
+    "static": true,
+    "longname": "/home/jd/Documents/work/oclock/recrutement/test-technique/fxpocket/src/StaticUI.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 65,
+    "kind": "function",
+    "name": "StaticUI",
+    "memberof": "src/StaticUI.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/StaticUI.js~StaticUI",
+    "access": "public",
+    "export": true,
+    "importPath": "fxpocket/src/StaticUI.js",
+    "importStyle": "StaticUI",
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "params": [
+      {
+        "name": "WrappedComponent",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 66,
+    "kind": "file",
+    "name": "src/fixer.js",
+    "content": "/**\n * **http://fixer.io/ API wrapper providing helper functions.**\n */\nexport default class Fixer {\n  /**\n   * `Fixer.connect()` - Synchronously pre-fetches available currencies and\n   * matching conversion rates.\n   *\n   * One *must* use `connect()` to instanciate `Fixer`.\n   *\n   * @return {Fixer} a populated instance\n  */\n  static async connect() {\n    const currencies = await this.fetchCurrencies()\n    const rates = await this.fetchRates(currencies)\n    return new Fixer(currencies, rates)\n  }\n\n  /** @ignore */\n  constructor(currencies, rates) {\n    if (typeof currencies === 'undefined') {\n      throw new Error('Cannot be called directly, use Fixer.connect() instead.')\n    }\n    /** @type {Array<string>} */\n    this.currencies = currencies\n    /** @type {Object} */\n    this.rates = rates\n  }\n\n  /**\n   * `Fixer.fetchRates()` - Fetches conversion rates for specified currencies.\n   *\n   * Specified currencies must be available on the API.\n   *\n   * @param {Array<string>} currencies - available currencies\n   * @return {Array<Object>} matching rates for each available currency\n   */\n  static fetchRates(currencies) {\n    return Promise.all(currencies.map((currency) => {\n      // Beware: as fetch().then() returns a Promise (for chainability), it must\n      // be part of Promise.all().\n      return fetch(`https://api.fixer.io/latest?base=${currency}`)\n        .then(response => response.json())\n    }))\n    .then(data => {\n      const extractRates = (acc, val) => {\n        acc[val.base] = val.rates\n        return acc\n      }\n      return data.reduce(extractRates, {})\n    })\n  }\n\n  /**\n   * `Fixer.fetchCurrencies()` - Fetches available currencies.\n   *\n   * @return {Array<string>} A list of ISO 4217 codes, alpha-sorted\n   * @see https://en.wikipedia.org/wiki/ISO_4217\n   */\n  static fetchCurrencies() {\n    return fetch(`https://api.fixer.io/latest?base=EUR`)\n      .then(response => response.json())\n      .then(data => {\n        return [\n          'EUR',\n          ...Object.keys(data.rates),\n        ].sort((a,b) => a.localeCompare(b))\n      })\n  }\n}\n",
+    "static": true,
+    "longname": "/home/jd/Documents/work/oclock/recrutement/test-technique/fxpocket/src/fixer.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 67,
+    "kind": "class",
+    "name": "Fixer",
+    "memberof": "src/fixer.js",
+    "static": true,
+    "longname": "src/fixer.js~Fixer",
+    "access": "public",
+    "export": true,
+    "importPath": "fxpocket/src/fixer.js",
+    "importStyle": "Fixer",
+    "description": "**http://fixer.io/ API wrapper providing helper functions.**",
+    "lineNumber": 4,
+    "interface": false
+  },
+  {
+    "__docId__": 68,
+    "kind": "method",
+    "name": "connect",
+    "memberof": "src/fixer.js~Fixer",
+    "generator": false,
+    "async": true,
+    "static": true,
+    "longname": "src/fixer.js~Fixer.connect",
+    "access": "public",
+    "description": "`Fixer.connect()` - Synchronously pre-fetches available currencies and\nmatching conversion rates.\n\nOne *must* use `connect()` to instanciate `Fixer`.",
+    "lineNumber": 13,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Fixer"
+      ],
+      "spread": false,
+      "description": "a populated instance"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 69,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/fixer.js~Fixer",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/fixer.js~Fixer#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 20,
+    "ignore": true
+  },
+  {
+    "__docId__": 70,
+    "kind": "member",
+    "name": "currencies",
+    "memberof": "src/fixer.js~Fixer",
+    "static": false,
+    "longname": "src/fixer.js~Fixer#currencies",
+    "access": "public",
+    "description": null,
+    "lineNumber": 25,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Array<string>"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 71,
+    "kind": "member",
+    "name": "rates",
+    "memberof": "src/fixer.js~Fixer",
+    "static": false,
+    "longname": "src/fixer.js~Fixer#rates",
+    "access": "public",
+    "description": null,
+    "lineNumber": 27,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 72,
+    "kind": "method",
+    "name": "fetchRates",
+    "memberof": "src/fixer.js~Fixer",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/fixer.js~Fixer.fetchRates",
+    "access": "public",
+    "description": "`Fixer.fetchRates()` - Fetches conversion rates for specified currencies.\n\nSpecified currencies must be available on the API.",
+    "lineNumber": 38,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array<string>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "currencies",
+        "description": "available currencies"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Array<Object>"
+      ],
+      "spread": false,
+      "description": "matching rates for each available currency"
+    }
+  },
+  {
+    "__docId__": 73,
+    "kind": "method",
+    "name": "fetchCurrencies",
+    "memberof": "src/fixer.js~Fixer",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/fixer.js~Fixer.fetchCurrencies",
+    "access": "public",
+    "description": "`Fixer.fetchCurrencies()` - Fetches available currencies.",
+    "see": [
+      "https://en.wikipedia.org/wiki/ISO_4217"
+    ],
+    "lineNumber": 60,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Array<string>"
+      ],
+      "spread": false,
+      "description": "A list of ISO 4217 codes, alpha-sorted"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 74,
+    "kind": "file",
+    "name": "src/utils.js",
+    "content": "import coinify from 'coinify'\n\nimport Fixer from './fixer'\n\n/** @type {string} */\nexport const APP_TITLE = 'fxPocket'\n/** @type {string} */\nexport const APP_MOTTO = 'Currency conversion made easy.'\n\n/**\n * {@link App}'s initial state.\n *\n * First `widgets` entry is considered the \"base\" currency, next widgets are\n * \"quote\" currencies.\n *\n * @see https://www.investopedia.com/terms/c/currencypair.asp\n *\n * @type {Object}\n * @property {boolean} INITIAL_STATE.init - Keeps track of the app's async startup process\n * @property {Array<string>} INITIAL_STATE.widgets - A list of currency widgets to display at startup\n * @property {number|undefined} INITIAL_STATE.baseAmount - Keeps track of the base currency's amount\n */\nexport const INITIAL_STATE = {\n  init: false,\n  widgets: ['EUR', 'USD'],\n  baseAmount: undefined\n}\n\n/**\n * Rounds floating numbers to n decimals.\n *\n * @see http://www.jacklmoore.com/notes/rounding-in-javascript/\n *\n * @param {number} value\n * @param {number} [decimals=2] - how many decimals to keep\n * @return {number}\n */\nexport function round(value, decimals = 2) {\n  return Number(Math.round(value+'e'+decimals)+'e-'+decimals);\n}\n\n/**\n * Converts an amount from one currency to another.\n *\n * The function may be curried over a specific {@link Fixer} record.\n *\n * @param {Fixer} fixer - must provide conversion rates between specified currencies (any object abiding by Fixer's API is also valid)\n * @param {number} amount - the amount to convert\n * @param {string} baseCurrency - currency to convert from (amount's current unit)\n * @param {string} quoteCurrency - currency to convert to\n * @return {number} converted amount\n */\nexport function convertAmount(fixer, amount, baseCurrency, quoteCurrency) {\n  if (arguments.length === 1 && arguments[0] instanceof Fixer)\n    return (amount, baseCurrency, quoteCurrency) =>\n      convertAmount.bind({}, fixer)(amount, baseCurrency, quoteCurrency)\n\n  return amount * fixer.rates[baseCurrency][quoteCurrency]\n}\n\n/**\n * Batch-conversion of several amounts expressed in the same base currency, to\n * all supported quote currencies as specified by the Fixer record.\n *\n * The function may be curried over a specific {@link Fixer} record.\n *\n * @param {Fixer} fixer - must provide conversion rates between specified base currency and some quote currencies\n * @param {Object} context\n * @param {number} context.amount - the amount to convert\n * @param {string} context.currency - the base currency (amount's current unit)\n * @return {Object} a list of converted amounts for each supported quote currencies\n */\nexport function convertAmounts(fixer, context = {}) {\n  if (arguments.length === 1 && arguments[0] instanceof Fixer)\n    return (context = {}) => convertAmounts.bind({}, fixer)(context)\n\n  if (!context.amount || !context.currency) return {}\n\n  return context.currencies.reduce((acc, currency) => {\n    let amount\n    if (context.currency === currency)\n      amount = context.amount\n    else\n      amount = convertAmount(fixer, context.amount, context.currency, currency)\n    acc[currency] = round(amount)\n    return acc\n  }, {})\n}\n\n/**\n * User-friendly wording for a currency.\n *\n * Eg. for 'AUD', returns 'AUD / Australian Dollar'\n *\n * @param {string} currency\n * @return {string}\n */\nexport function currencyWording(currency) {\n  const c = coinify.get(currency)\n  return [\n    c.code,\n    '/',\n    c.name\n  ].join(' ')\n}\n",
+    "static": true,
+    "longname": "/home/jd/Documents/work/oclock/recrutement/test-technique/fxpocket/src/utils.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 75,
+    "kind": "variable",
+    "name": "APP_TITLE",
+    "memberof": "src/utils.js",
+    "static": true,
+    "longname": "src/utils.js~APP_TITLE",
+    "access": "public",
+    "export": true,
+    "importPath": "fxpocket/src/utils.js",
+    "importStyle": "{APP_TITLE}",
+    "description": null,
+    "lineNumber": 6,
+    "type": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 76,
+    "kind": "variable",
+    "name": "APP_MOTTO",
+    "memberof": "src/utils.js",
+    "static": true,
+    "longname": "src/utils.js~APP_MOTTO",
+    "access": "public",
+    "export": true,
+    "importPath": "fxpocket/src/utils.js",
+    "importStyle": "{APP_MOTTO}",
+    "description": null,
+    "lineNumber": 8,
+    "type": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 77,
+    "kind": "variable",
+    "name": "INITIAL_STATE",
+    "memberof": "src/utils.js",
+    "static": true,
+    "longname": "src/utils.js~INITIAL_STATE",
+    "access": "public",
+    "export": true,
+    "importPath": "fxpocket/src/utils.js",
+    "importStyle": "{INITIAL_STATE}",
+    "description": "{@link App}'s initial state.\n\nFirst `widgets` entry is considered the \"base\" currency, next widgets are\n\"quote\" currencies.",
+    "see": [
+      "https://www.investopedia.com/terms/c/currencypair.asp"
+    ],
+    "lineNumber": 23,
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "INITIAL_STATE.init",
+        "description": "Keeps track of the app's async startup process"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Array<string>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "INITIAL_STATE.widgets",
+        "description": "A list of currency widgets to display at startup"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number",
+          "undefined"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "INITIAL_STATE.baseAmount",
+        "description": "Keeps track of the base currency's amount"
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 78,
+    "kind": "function",
+    "name": "round",
+    "memberof": "src/utils.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils.js~round",
+    "access": "public",
+    "export": true,
+    "importPath": "fxpocket/src/utils.js",
+    "importStyle": "{round}",
+    "description": null,
+    "lineNumber": 38,
+    "undocument": true,
+    "params": [
+      {
+        "name": "value",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "decimals",
+        "optional": true,
+        "types": [
+          "number"
+        ],
+        "defaultRaw": 2,
+        "defaultValue": "2"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 79,
+    "kind": "function",
+    "name": "convertAmount",
+    "memberof": "src/utils.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils.js~convertAmount",
+    "access": "public",
+    "export": true,
+    "importPath": "fxpocket/src/utils.js",
+    "importStyle": "{convertAmount}",
+    "description": "Converts an amount from one currency to another.\n\nThe function may be curried over a specific {@link Fixer} record.",
+    "lineNumber": 53,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Fixer"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "fixer",
+        "description": "must provide conversion rates between specified currencies (any object abiding by Fixer's API is also valid)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "amount",
+        "description": "the amount to convert"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "baseCurrency",
+        "description": "currency to convert from (amount's current unit)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "quoteCurrency",
+        "description": "currency to convert to"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "converted amount"
+    }
+  },
+  {
+    "__docId__": 80,
+    "kind": "function",
+    "name": "convertAmounts",
+    "memberof": "src/utils.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils.js~convertAmounts",
+    "access": "public",
+    "export": true,
+    "importPath": "fxpocket/src/utils.js",
+    "importStyle": "{convertAmounts}",
+    "description": "Batch-conversion of several amounts expressed in the same base currency, to\nall supported quote currencies as specified by the Fixer record.\n\nThe function may be curried over a specific {@link Fixer} record.",
+    "lineNumber": 73,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Fixer"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "fixer",
+        "description": "must provide conversion rates between specified base currency and some quote currencies"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "context",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "context.amount",
+        "description": "the amount to convert"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "context.currency",
+        "description": "the base currency (amount's current unit)"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "a list of converted amounts for each supported quote currencies"
+    }
+  },
+  {
+    "__docId__": 81,
+    "kind": "function",
+    "name": "currencyWording",
+    "memberof": "src/utils.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils.js~currencyWording",
+    "access": "public",
+    "export": true,
+    "importPath": "fxpocket/src/utils.js",
+    "importStyle": "{currencyWording}",
+    "description": "User-friendly wording for a currency.\n\nEg. for 'AUD', returns 'AUD / Australian Dollar'",
+    "lineNumber": 98,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "currency",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "kind": "index",
+    "content": "fxPocket\n========\n\n**A simple currency converter.**\n\n## TL;DR:\n\nInstall required dependencies with:\n\n```sh\n# Install Node.js first (https://nodejs.org/en/)\nnpm install\n```\n\nStart the web server with:\n\n```sh\nnpm start\n```\n\nThen go check http://localhost:3000/.\n\n## Specs & Tests\n\n* High-level specs are available in [docs/features](./docs/features).\n* Unit and functional tests may be run with `npm run test`.\n\n## A Student's Noteworthy Features\n\n* [Pull Request #2](https://github.com/chikamichi/fxpocket/pull/2) demonstrates *Test-Driven Development* (TDD) in a step-by-step fashion.\n* [Pull Request #9](https://github.com/chikamichi/fxpocket/pull/9) demonstrates a simple API-aware component's lifecycle, with underlying limitations.\n* [Pull Request #11](https://github.com/chikamichi/fxpocket/pull/12) demonstrates the \"Lifting State Up\" pattern.\n* [Pull Request #15](https://github.com/chikamichi/fxpocket/pull/15) demonstrates a more complex PR, including review and incrementally fixing code chunks based on peer-feedback.\n* [Pull Request #21](https://github.com/chikamichi/fxpocket/pull/21) demonstrates TDD bug-fixing on a grown-up project.\n* [Pull Request #23](https://github.com/chikamichi/fxpocket/pull/23) demonstrates separating concerns between fetching and rendering data, as well as mocking external dependencies & requests in tests.\n\n## Quality of Life\n\nThis project was bootstrapped with [*Create React App*](https://github.com/facebookincubator/create-react-app) the following way:\n\n```sh\nnpm install -g npx # https://github.com/zkat/npx\nnpx create-react-app fxpocket # https://github.com/facebook/create-react-app\n```\n\n*Create React App* does all the heavy-lifting. More information about *Create React App* is available [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).\n\nSuggested Atom plugins for this project:\n\n- https://atom.io/packages/file-icons\n- https://atom.io/packages/atom-beautify\n- https://atom.io/packages/language-gherkin\n- https://atom.io/packages/atom-ide-ui\n- https://atom.io/packages/ide-css\n- https://atom.io/packages/ide-html\n- https://atom.io/packages/ide-standardjs\n- https://atom.io/packages/linter-ui-default\n- https://atom.io/packages/linter-eslint (depends on https://eslint.org/)\n- https://atom.io/packages/esdoc\n",
+    "longname": "/home/jd/Documents/work/oclock/recrutement/test-technique/fxpocket/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"fxpocket\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"dependencies\": {\n    \"coinify\": \"^2.0.2\",\n    \"prop-types\": \"^15.6.0\",\n    \"react\": \"^16.2.0\",\n    \"react-dom\": \"^16.2.0\",\n    \"react-scripts\": \"1.1.1\",\n    \"whatwg-fetch\": \"^2.0.3\"\n  },\n  \"scripts\": {\n    \"start\": \"react-scripts start\",\n    \"build\": \"react-scripts build\",\n    \"test\": \"react-scripts test --env=jsdom\",\n    \"eject\": \"react-scripts eject\",\n    \"doc\": \"./node_modules/.bin/esdoc\"\n  },\n  \"devDependencies\": {\n    \"check-prop-types\": \"^1.1.2\",\n    \"enzyme\": \"^3.3.0\",\n    \"enzyme-adapter-react-16\": \"^1.1.1\",\n    \"esdoc\": \"^1.0.4\",\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n    \"esdoc-jsx-plugin\": \"^1.0.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"hereafter\": \"^1.0.4\",\n    \"jest-enzyme\": \"^4.2.0\"\n  }\n}\n",
+    "longname": "/home/jd/Documents/work/oclock/recrutement/test-technique/fxpocket/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

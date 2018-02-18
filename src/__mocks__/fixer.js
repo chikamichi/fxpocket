@@ -1,3 +1,8 @@
+/**
+ * Mock requests to fixer.io in tests.
+ *
+ * @ignore
+ */
 export default class Fixer {
 
   static async connect() {

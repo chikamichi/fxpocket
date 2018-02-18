@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/App.js | fxpocket</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/App.js~App.html">App</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Currency.js~Currency.html">Currency</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/fixer.js~Fixer.html">Fixer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-StaticUI">StaticUI</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-convertAmount">convertAmount</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-convertAmounts">convertAmounts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-currencyWording">currencyWording</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-round">round</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-APP_MOTTO">APP_MOTTO</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-APP_TITLE">APP_TITLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-INITIAL_STATE">INITIAL_STATE</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/App.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import React, { Component } from &apos;react&apos;
+
+import Currency from &apos;./Currency&apos;
+import { INITIAL_STATE, convertAmount, convertAmounts } from &apos;./utils&apos;
+import Fixer from &apos;./fixer&apos;
+import &apos;./App.css&apos;
+
+/**
+ * **App &#x2014; a container component for the currency converter.**
+ *
+ * Responsible for converting between base and quote currencies, and displaying
+ * so-called &quot;currency widgets&quot;. The first currency widget in the list defines
+ * what the base currency is, subsequent widgets map to quote currencies.
+ * @see https://www.investopedia.com/terms/b/basecurrency.asp
+ */
+class App extends Component {
+  /** @ignore */
+  constructor(props) {
+    super(props)
+    /** @type {Object} */
+    this.state = INITIAL_STATE
+  }
+
+  /**
+   * User edited a currency widget&apos;s amount.
+   *
+   * Side-effect depends on whether we&apos;re dealing with the base currency or not:
+   * - base widget edited =&gt; replace `state.baseAmount` with raw new value
+   * - quote widget edited =&gt; replace `state.baseAmount` with converted value
+   *
+   * @param {Object} payload
+   * @param {number} payload.uuid - widget&apos;s UUID
+   * @param {number} payload.amount - widget&apos;s new amount
+   */
+  onAmountEdited(payload) {
+    let newBaseAmount
+    if (payload.uuid === 0)
+      newBaseAmount = payload.amount
+    else
+      newBaseAmount = this.convertAmount(payload.amount, this.state.widgets[payload.uuid], this.state.widgets[0])
+    this.setState({baseAmount: newBaseAmount})
+  }
+
+  /**
+   * User edited a currency widget&apos;s currency.
+   *
+   * @param {Object} payload
+   * @param {number} payload.uuid - widget&apos;s UUID
+   * @param {string} payload.currency - widget&apos;s new currency
+   */
+  onCurrencyEdited(payload) {
+    const idx = payload.uuid
+    const newWidgetsState = [
+      ...this.state.widgets.slice(0, idx),
+      payload.currency,
+      ...this.state.widgets.slice(idx+1)
+    ]
+    this.setState({
+      widgets: newWidgetsState
+    })
+  }
+
+  /**
+   * Upon the App being mounted:
+   * - fetch supported currencies as well as conversion rates;
+   * - bind conversion utilities to fetched data;
+   * - eventually mark the component as ready.
+   */
+  componentDidMount() {
+    Fixer.connect().then(fixer =&gt; {
+      /** @type {Fixer} */
+      this.fixer = fixer
+      /**
+       * `state.fixer`-curried {@link src/utils.js~convertAmount} utility.
+       * @type {function}
+       */
+      this.convertAmount = convertAmount(fixer)
+      /**
+       * `state.fixer`-curried {@link src/utils.js~convertAmounts} utility.
+       * @type {function}
+       */
+      this.convertAmounts = convertAmounts(fixer)
+      this.setState({init: true})
+    })
+  }
+
+  /**
+   * Renders the core application as a list of currency widgets.
+   *
+   * @return {ReactElement}
+   */
+  render() {
+    if (!this.state.init) return &lt;div className=&apos;fxp-loading&apos;&gt;&lt;/div&gt;
+    const currencies = this.fixer.currencies
+    const cb = {
+      onAmountEdited: this.onAmountEdited.bind(this),
+      onCurrencyEdited: this.onCurrencyEdited.bind(this)
+    }
+    const amounts = this.convertAmounts({
+      amount: this.state.baseAmount,
+      currency: this.state.widgets[0],
+      currencies: this.state.widgets
+    })
+    const widgets = this.state.widgets.map((currency, i) =&gt; {
+      return &lt;Currency
+        key={i} // key is simply the position in this.state.widgets
+        uuid={i}
+        amount={amounts[currency]}
+        currency={currency}
+        currencies={currencies}
+        onAmountEdited={cb.onAmountEdited}
+        onCurrencyEdited={cb.onCurrencyEdited} /&gt;
+    })
+    return (
+      &lt;div className=&quot;fxp-app&quot;&gt;
+        {widgets}
+      &lt;/div&gt;
+    )
+  }
+}
+
+export default App
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

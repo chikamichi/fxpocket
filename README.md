@@ -56,3 +56,4 @@ Suggested Atom plugins for this project:
 - https://atom.io/packages/ide-standardjs
 - https://atom.io/packages/linter-ui-default
 - https://atom.io/packages/linter-eslint (depends on https://eslint.org/)
+- https://atom.io/packages/esdoc
