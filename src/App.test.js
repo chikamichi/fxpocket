@@ -61,15 +61,29 @@ describe('<App />', () => {
         expect(wrapper).toHaveState('baseAmount', initialState)
       })
 
-      it('is updated upon onAmountEdited()', () => {
+      it('is updated upon onAmountEdited() being triggered by the base currency widget', () => {
         const payload = {
+          uuid: 0,
           amount: 42
         }
         wrapper.instance().onAmountEdited(payload)
         expect(wrapper).toHaveState('baseAmount', payload.amount)
       })
 
-      it.only('is updated upon onCurrencyEdited()', () => {
+      it('is updated upon onAmountEdited() being triggered by a quote currency widget', () => {
+        const payload = {
+          uuid: 1,
+          amount: 42
+        }
+        wrapper.instance().onAmountEdited(payload)
+        // Tests' default state is:
+        // - widgets is ['EUR', 'USD']
+        // - 1 EUR = 0.8 USD
+        const expected = 42 * 0.8
+        expect(wrapper).toHaveState('baseAmount', expected)
+      })
+
+      it('is updated upon onCurrencyEdited()', () => {
         const payload = {
           uuid: 0,
           amount: 42,
