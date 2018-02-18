@@ -20,6 +20,8 @@ npm start
 
 Then go check http://localhost:3000/.
 
+Documentation is available at https://fxpocket-docs.netlify.com/.
+
 ## Specs & Tests
 
 * High-level specs are available in [docs/features](./docs/features).
