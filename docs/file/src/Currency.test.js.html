@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/Currency.test.js | fxpocket</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/App.js~App.html">App</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Currency.js~Currency.html">Currency</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/fixer.js~Fixer.html">Fixer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-StaticUI">StaticUI</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-register">register</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-unregister">unregister</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-convertAmount">convertAmount</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-convertAmounts">convertAmounts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-currencyWording">currencyWording</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-round">round</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-APP_MOTTO">APP_MOTTO</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-APP_TITLE">APP_TITLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-INITIAL_STATE">INITIAL_STATE</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/Currency.test.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import React from &apos;react&apos;
+import { shallow, mount } from &apos;enzyme&apos;
+import { assertPropTypes } from &apos;check-prop-types&apos;
+
+import Currency from &apos;./Currency&apos;
+
+describe(&apos;&lt;Currency /&gt;&apos;, () =&gt; {
+  const dummyProps = {
+    key: 0,
+    uuid: 0,
+    currency: &apos;EUR&apos;,
+    currencies: [&apos;EUR&apos;, &apos;USD&apos;],
+    amount: 42,
+    onAmountEdited: () =&gt; {},
+    onCurrencyEdited: () =&gt; {}
+  }
+
+  describe(&apos;props&apos;, () =&gt; {
+    // A Tale of Three Pitfalls:
+    //
+    // https://github.com/airbnb/enzyme/pull/1243
+    // Testing props requires components to be stateful, starting with React 16.
+    //
+    // https://github.com/airbnb/enzyme/issues/588
+    // When using PropTypes.oneOf(), one is limited to whitelist testing; that
+    // is, testing all valid values, which leaves room for error due to new
+    // valid values being added to the code but not in the test. Test must be
+    // maintained as well!
+    //
+    // https://github.com/facebook/prop-types/issues/28
+    // When a required prop-type is not provided, React console.log() which is
+    // hard to test against. Using the check-prop-types library will work around
+    // that issue, until React provides a native way to toggle error throwing in
+    // tests.
+
+    it(&apos;requires a &quot;currency&quot; string prop&apos;, () =&gt; {
+      const {currency, ...props} = dummyProps
+      expect(() =&gt; {
+          assertPropTypes(Currency.propTypes, props, &apos;prop&apos;, Currency.currency)
+        }
+      ).toThrowError(/prop `currency` is marked as required/)
+    })
+
+    it(&apos;requires a &quot;currencies&quot; array prop&apos;, () =&gt; {
+      const {currencies, ...props} = dummyProps
+      expect(() =&gt; {
+          assertPropTypes(Currency.propTypes, props, &apos;prop&apos;, Currency.currencies)
+        }
+      ).toThrowError(/prop `currencies` is marked as required/)
+    })
+
+    it(&apos;requires a &quot;onAmountEdited&quot; function prop&apos;, () =&gt; {
+      const {onAmountEdited, ...props} = dummyProps
+      expect(() =&gt; {
+          assertPropTypes(Currency.propTypes, props, &apos;prop&apos;, Currency.onAmountEdited)
+        }
+      ).toThrowError(/prop `onAmountEdited` is marked as required/)
+    })
+
+    it(&apos;requires a &quot;onCurrencyEdited&quot; function prop&apos;, () =&gt; {
+      const {onCurrencyEdited, ...props} = dummyProps
+      expect(() =&gt; {
+          assertPropTypes(Currency.propTypes, props, &apos;prop&apos;, Currency.onCurrencyEdited)
+        }
+      ).toThrowError(/prop `onCurrencyEdited` is marked as required/)
+    })
+  })
+
+  describe(&apos;layout&apos;, () =&gt; {
+    var wrapper = undefined
+
+    beforeEach(() =&gt; {
+      wrapper = shallow(&lt;Currency {...dummyProps} /&gt;)
+    })
+
+    it(&apos;renders as a div.fxp-currency&apos;, () =&gt; {
+      expect(wrapper.is(&apos;div.fxp-currency&apos;)).toBe(true)
+    })
+
+    it(&apos;then renders a result area&apos;, () =&gt; {
+      expect(wrapper.childAt(0).is(&apos;div.fxp-currency__result&apos;)).toBe(true)
+    })
+
+    it(&apos;first renders a currency drop-down&apos;, () =&gt; {
+      expect(wrapper.childAt(1).is(&apos;select.fxp-currency__list&apos;)).toBe(true)
+    })
+
+    it(&apos;pre-selects the specified currency&apos;, () =&gt; {
+      // Testing against React&apos;s &quot;selected&quot; API.
+      // @see https://reactjs.org/docs/forms.html#the-select-tag
+      expect(wrapper.find(&apos;.fxp-currency__list&apos;).is(&apos;[value=&quot;EUR&quot;]&apos;)).toBe(true)
+    })
+
+    it(&apos;displays a text input to enter an amount, with an explicit unit&apos;, () =&gt; {
+      const resultArea = wrapper.find(&apos;.fxp-currency__result&apos;)
+      expect(resultArea.children().length).toEqual(2)
+      // expect(resultArea.childAt(0).html().is(&apos;&lt;input type=&quot;text&quot; class=&quot;fxp-currency__amount&quot;/&gt;&apos;)).toBe(true)
+      // expect(resultArea.childAt(0).equals(&lt;input type=&apos;text&apos; className=&apos;fxp-currency__amount&apos; /&gt;)).toBe(true)
+      // const onChange = wrapper.instance().onAmountEdited
+      // console.log(onChange)
+      // expect(resultArea.childAt(0).equals(&lt;input type=&apos;text&apos; className=&apos;fxp-currency__amount&apos; onChange={onChange} /&gt;)).toBe(true)
+      expect(resultArea.childAt(1).equals(&lt;span className=&apos;fxp-currency__label&apos;&gt;&#x20AC;&lt;/span&gt;)).toBe(true)
+    })
+
+    it(&apos;renders currencies as a full-fledged list&apos;, async () =&gt; {
+      const wrapper = await mount(&lt;Currency {...dummyProps} /&gt;)
+      const expected = dummyProps.currencies
+      const items = wrapper.update().find(&apos;.fxp-currency__list-item&apos;)
+      items.forEach((option, _) =&gt; {
+        expect(option.is(&apos;option&apos;)).toBe(true)
+      })
+      const itemsAsValues = items.map((option, _) =&gt; option.prop(&apos;value&apos;))
+      expect(itemsAsValues).toEqual(expected)
+      const itemsAsKeys = items.map((option, _) =&gt; option.key())
+      expect(itemsAsKeys).toEqual(expected)
+      const itemsAsText = items.map((option, _) =&gt; option.text())
+      itemsAsText.forEach((text, idx) =&gt; {
+        const rx = new RegExp(&apos;^&apos; + expected[idx] + &apos; / .+$&apos;)
+        expect(text).toMatch(rx)
+      })
+    })
+  })
+
+  describe(&apos;events&apos;, () =&gt; {
+    describe(&apos;upon editing the amount&apos;, () =&gt; {
+      it(&apos;triggers props.onAmountEdited&apos;, async () =&gt; {
+        const spy = jest.fn()
+        const props = {...dummyProps, onAmountEdited: spy}
+        const wrapper = await shallow(&lt;Currency {...props} /&gt;)
+        wrapper.update().find(&apos;.fxp-currency__amount&apos;).simulate(&apos;change&apos;, {
+          target: { value: 42 }
+        })
+        expect(spy).toHaveBeenCalledTimes(1)
+        expect(spy).toHaveBeenLastCalledWith({
+          uuid: 0,
+          amount: 42
+        })
+      })
+    })
+
+    describe(&apos;upon editing the currency&apos;, () =&gt; {
+      it(&apos;triggers props.onCurrencyEdited&apos;, async () =&gt; {
+        const spy = jest.fn()
+        const props = {...dummyProps, onCurrencyEdited: spy}
+        const wrapper = await shallow(&lt;Currency {...props} /&gt;)
+        wrapper.update().find(&apos;.fxp-currency__list&apos;).simulate(&apos;change&apos;, {
+          target: { value: &apos;USD&apos; }
+        })
+        expect(spy).toHaveBeenCalledTimes(1)
+        expect(spy).toHaveBeenLastCalledWith({
+          uuid: 0,
+          amount: 42,
+          currency: &apos;USD&apos;
+        })
+      })
+    })
+  })
+})
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

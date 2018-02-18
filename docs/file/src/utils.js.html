@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/utils.js | fxpocket</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/App.js~App.html">App</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Currency.js~Currency.html">Currency</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/fixer.js~Fixer.html">Fixer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-StaticUI">StaticUI</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-convertAmount">convertAmount</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-convertAmounts">convertAmounts</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-currencyWording">currencyWording</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-round">round</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-APP_MOTTO">APP_MOTTO</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-APP_TITLE">APP_TITLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-INITIAL_STATE">INITIAL_STATE</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/utils.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import coinify from &apos;coinify&apos;
+
+import Fixer from &apos;./fixer&apos;
+
+/** @type {string} */
+export const APP_TITLE = &apos;fxPocket&apos;
+/** @type {string} */
+export const APP_MOTTO = &apos;Currency conversion made easy.&apos;
+
+/**
+ * {@link App}&apos;s initial state.
+ *
+ * First `widgets` entry is considered the &quot;base&quot; currency, next widgets are
+ * &quot;quote&quot; currencies.
+ *
+ * @see https://www.investopedia.com/terms/c/currencypair.asp
+ *
+ * @type {Object}
+ * @property {boolean} INITIAL_STATE.init - Keeps track of the app&apos;s async startup process
+ * @property {Array&lt;string&gt;} INITIAL_STATE.widgets - A list of currency widgets to display at startup
+ * @property {number|undefined} INITIAL_STATE.baseAmount - Keeps track of the base currency&apos;s amount
+ */
+export const INITIAL_STATE = {
+  init: false,
+  widgets: [&apos;EUR&apos;, &apos;USD&apos;],
+  baseAmount: undefined
+}
+
+/**
+ * Rounds floating numbers to n decimals.
+ *
+ * @see http://www.jacklmoore.com/notes/rounding-in-javascript/
+ *
+ * @param {number} value
+ * @param {number} [decimals=2] - how many decimals to keep
+ * @return {number}
+ */
+export function round(value, decimals = 2) {
+  return Number(Math.round(value+&apos;e&apos;+decimals)+&apos;e-&apos;+decimals);
+}
+
+/**
+ * Converts an amount from one currency to another.
+ *
+ * The function may be curried over a specific {@link Fixer} record.
+ *
+ * @param {Fixer} fixer - must provide conversion rates between specified currencies (any object abiding by Fixer&apos;s API is also valid)
+ * @param {number} amount - the amount to convert
+ * @param {string} baseCurrency - currency to convert from (amount&apos;s current unit)
+ * @param {string} quoteCurrency - currency to convert to
+ * @return {number} converted amount
+ */
+export function convertAmount(fixer, amount, baseCurrency, quoteCurrency) {
+  if (arguments.length === 1 &amp;&amp; arguments[0] instanceof Fixer)
+    return (amount, baseCurrency, quoteCurrency) =&gt;
+      convertAmount.bind({}, fixer)(amount, baseCurrency, quoteCurrency)
+
+  return amount * fixer.rates[baseCurrency][quoteCurrency]
+}
+
+/**
+ * Batch-conversion of several amounts expressed in the same base currency, to
+ * all supported quote currencies as specified by the Fixer record.
+ *
+ * The function may be curried over a specific {@link Fixer} record.
+ *
+ * @param {Fixer} fixer - must provide conversion rates between specified base currency and some quote currencies
+ * @param {Object} context
+ * @param {number} context.amount - the amount to convert
+ * @param {string} context.currency - the base currency (amount&apos;s current unit)
+ * @return {Object} a list of converted amounts for each supported quote currencies
+ */
+export function convertAmounts(fixer, context = {}) {
+  if (arguments.length === 1 &amp;&amp; arguments[0] instanceof Fixer)
+    return (context = {}) =&gt; convertAmounts.bind({}, fixer)(context)
+
+  if (!context.amount || !context.currency) return {}
+
+  return context.currencies.reduce((acc, currency) =&gt; {
+    let amount
+    if (context.currency === currency)
+      amount = context.amount
+    else
+      amount = convertAmount(fixer, context.amount, context.currency, currency)
+    acc[currency] = round(amount)
+    return acc
+  }, {})
+}
+
+/**
+ * User-friendly wording for a currency.
+ *
+ * Eg. for &apos;AUD&apos;, returns &apos;AUD / Australian Dollar&apos;
+ *
+ * @param {string} currency
+ * @return {string}
+ */
+export function currencyWording(currency) {
+  const c = coinify.get(currency)
+  return [
+    c.code,
+    &apos;/&apos;,
+    c.name
+  ].join(&apos; &apos;)
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

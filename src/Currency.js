@@ -4,7 +4,22 @@ import coinify from 'coinify'
 
 import { currencyWording } from './utils'
 
+/**
+ * **Currency — a presentational component mapped to a specific currency & amount.**
+ *
+ * A <Currency /> instance is refered to as a "currency widget".
+ */
 class Currency extends React.Component {
+  /**
+   * User edited the widget's amount.
+   *
+   * Delegates to the matching callback provided as `props.onAmountEdited`.
+   *
+   * @see {@link App#onAmountEdited}
+   * @see https://reactjs.org/docs/events.html
+   *
+   * @param {SyntheticEvent} event - "change" event
+   */
   onAmountEdited(event) {
     this.props.onAmountEdited({
       uuid: this.props.uuid,
@@ -12,6 +27,16 @@ class Currency extends React.Component {
     })
   }
 
+  /**
+   * User edited the widget's currency.
+   *
+   * Delegates to the matching callback provided as `props.onCurrencyEdited`.
+   *
+   * @see {@link App#onCurrencyEdited}
+   * @see https://reactjs.org/docs/events.html
+   *
+   * @param {SyntheticEvent} event - "change" event
+   */
   onCurrencyEdited(event) {
     this.props.onCurrencyEdited({
       uuid: this.props.uuid,
@@ -20,6 +45,11 @@ class Currency extends React.Component {
     })
   }
 
+  /**
+   * Renders the currency widget.
+   *
+   * @return {ReactElement}
+   */
   render() {
     const currencies = this.props.currencies.map((currency) =>
       <option
@@ -51,9 +81,13 @@ class Currency extends React.Component {
 }
 
 Currency.propTypes = {
+  /** @type {string} */
   currency: PropTypes.string.isRequired,
+  /** @type {Array} */
   currencies: PropTypes.array.isRequired,
+  /** @type {function} */
   onAmountEdited: PropTypes.func.isRequired,
+  /** @type {function} */
   onCurrencyEdited: PropTypes.func.isRequired
 }
 

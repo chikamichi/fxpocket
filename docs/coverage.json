@@ -1,0 +1,36 @@
+{
+  "coverage": "93.1%",
+  "expectCount": 29,
+  "actualCount": 27,
+  "files": {
+    "src/App.js": {
+      "expectCount": 10,
+      "actualCount": 10,
+      "undocumentLines": []
+    },
+    "src/Currency.js": {
+      "expectCount": 4,
+      "actualCount": 4,
+      "undocumentLines": []
+    },
+    "src/StaticUI.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        8
+      ]
+    },
+    "src/fixer.js": {
+      "expectCount": 7,
+      "actualCount": 7,
+      "undocumentLines": []
+    },
+    "src/utils.js": {
+      "expectCount": 7,
+      "actualCount": 6,
+      "undocumentLines": [
+        38
+      ]
+    }
+  }
+}
