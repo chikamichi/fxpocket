@@ -17,7 +17,7 @@ class Currency extends React.Component {
       uuid: this.props.uuid,
       amount: this.props.amount,
       currency: event.target.value
-    }, this.props.uuid === 0)
+    })
   }
 
   render() {

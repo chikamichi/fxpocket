@@ -151,7 +151,7 @@ describe('<Currency />', () => {
           uuid: 0,
           amount: 42,
           currency: 'USD'
-        }, true)
+        })
       })
     })
   })

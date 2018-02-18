@@ -82,16 +82,6 @@ describe('<App />', () => {
         const expected = 42 * 0.8
         expect(wrapper).toHaveState('baseAmount', expected)
       })
-
-      it('is updated upon onCurrencyEdited()', () => {
-        const payload = {
-          uuid: 0,
-          amount: 42,
-          currency: 'USD'
-        }
-        wrapper.instance().onCurrencyEdited(payload)
-        expect(wrapper).toHaveState('baseAmount', payload.amount)
-      })
     })
   })
 })
