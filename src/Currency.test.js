@@ -149,7 +149,6 @@ describe('<Currency />', () => {
         expect(spy).toHaveBeenCalledTimes(1)
         expect(spy).toHaveBeenLastCalledWith({
           uuid: 0,
-          amount: 42,
           currency: 'USD'
         })
       })
